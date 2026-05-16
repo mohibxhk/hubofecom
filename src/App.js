@@ -1,7 +1,25 @@
+import "./App.css";
+
+import Navigation from "./Navigation";
+import Hero from "./Hero";
+import About from "./About";
+import Services from "./Services";
+import Experience from "./Experience";
+import Clients from "./Clients";
+import Contact from "./Contact";
+import Footer from "./Footer";
+
 function App() {
   return (
     <div className="App">
-      <h1>Hubofecom</h1>
+      <Navigation />
+      <Hero />
+      <About />
+      <Services />
+      <Experience />
+      <Clients />
+      <Contact />
+      <Footer />
     </div>
   );
 }
