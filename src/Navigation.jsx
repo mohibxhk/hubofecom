@@ -93,7 +93,7 @@ export default function Navigation() {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            className="md:hidden glass-panel border-t border-white/5 overflow-hidden"
+            className="md:hidden bg-[#070707]/95 backdrop-blur-xl border-t border-white/10 overflow-hidden"
             data-testid="nav-mobile-menu"
           >
             <ul className="px-6 py-4 space-y-2">
