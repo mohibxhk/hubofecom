@@ -22,11 +22,19 @@ export default function Navigation() {
   }, []);
 
   const go = (id) => {
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-    setOpen(false);
-  };
+  setOpen(false);
 
+  setTimeout(() => {
+    const el = document.getElementById(id);
+
+    if (el) {
+      el.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  }, 200);
+};
   return (
     <motion.nav
       initial={{ y: -40, opacity: 0 }}
