@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 
 const services = [
-  { icon: ShoppingCart, title: "eBay Account Management", desc: "Full eBay store setup, listing optimization, dispute handling and growth strategy.", accent: "from-[#FFE066] to-[#B8860B]" },
+  { icon: ShoppingCart, title: "Website Development", desc: "Modern responsive websites using React, Tailwind CSS, JavaScript, Framer Motion, Node.js and Vercel deployment.", accent: "from-[#FFE066] to-[#B8860B]" },
   { icon: ShoppingBag, title: "Amazon Store Management", desc: "FBA/FBM operations, PPC campaigns, A+ content and Brand Registry mastery.", accent: "from-[#FFD700] to-[#B8860B]" },
   { icon: Store, title: "Walmart Marketplace Management", desc: "Approval, catalog onboarding, repricing and Walmart Connect ad management.", accent: "from-[#FFE066] to-[#FFA500]" },
   { icon: Music2, title: "TikTok Shop Management", desc: "Affiliate seeding, live-shopping setup and viral content commerce strategy.", accent: "from-[#FFC300] to-[#B8860B]" },
