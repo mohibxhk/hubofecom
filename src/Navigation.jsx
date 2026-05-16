@@ -37,6 +37,7 @@ export default function Navigation() {
       }`}
       data-testid="main-navigation"
     >
+      <div className="max-w-7xl mx-auto px-6 md:px-12 h-16 md:h-20 flex items-center justify-between">
       <button
   onClick={() => go("home")}
   className="flex items-center gap-3 font-heading font-black text-lg md:text-xl tracking-tighter"
