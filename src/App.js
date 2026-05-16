@@ -8,20 +8,27 @@ import Experience from "./Experience";
 import Clients from "./Clients";
 import Contact from "./Contact";
 import Footer from "./Footer";
+import WebsiteDevelopment from "./WebsiteDevelopment";
 
 function App() {
   return (
-    <div className="App">
-      <Navigation />
-      <Hero />
-      <About />
-      <Services />
-      <Experience />
-      <Clients />
-      <Contact />
-      <Footer />
-    </div>
-  );
+  <>
+    {window.location.pathname === "/website-development" ? (
+      <WebsiteDevelopment />
+    ) : (
+      <div className="App">
+        <Navigation />
+        <Hero />
+        <About />
+        <Services />
+        <Experience />
+        <Clients />
+        <Contact />
+        <Footer />
+      </div>
+    )}
+  </>
+);
 }
 
 export default App;
