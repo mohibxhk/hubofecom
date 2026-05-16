@@ -37,17 +37,19 @@ export default function Navigation() {
       }`}
       data-testid="main-navigation"
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-12 h-16 md:h-20 flex items-center justify-between">
-        <button
-          onClick={() => go("home")}
-          className="flex items-center gap-2 font-heading font-black text-lg md:text-xl tracking-tighter"
-          data-testid="nav-logo"
-        >
-          <span className="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-gradient-to-br from-[#FFE066] to-[#B8860B] shadow-[0_0_20px_rgba(255,195,0,0.45)] text-black font-black">
-            H
-          </span>
-          <span className="text-white">Hubofecom<span className="text-[#FFC300]">.</span></span>
-        </button>
+      <button
+  onClick={() => go("home")}
+  className="flex items-center gap-3 font-heading font-black text-lg md:text-xl tracking-tighter"
+  data-testid="nav-logo"
+>
+  <span className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-gradient-to-br from-[#FFD84D] to-[#B8860B] shadow-[0_0_25px_rgba(255,195,0,0.35)] text-black text-2xl font-black leading-none">
+    H
+  </span>
+
+  <span className="text-white text-3xl font-black tracking-tight leading-none">
+    Hubofecom<span className="text-[#FFC300]">.</span>
+  </span>
+</button>
 
         <ul className="hidden md:flex items-center gap-2">
           {links.map((l) => (
