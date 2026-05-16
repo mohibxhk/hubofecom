@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.input-neon {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+  padding: 16px 0;
+  color: white;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.input-neon::placeholder {
+  color: rgba(255,255,255,0.35);
+}
+
+.input-neon:focus {
+  border-bottom: 1px solid #FFC300;
+  box-shadow: 0 8px 20px rgba(255,195,0,0.08);
+}
