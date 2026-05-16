@@ -73,15 +73,16 @@ export default function Contact() {
 
         <div className="mt-16 grid lg:grid-cols-12 gap-10">
           {/* Form */}
-          <motion.form
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            onSubmit={onSubmit}
-            className="lg:col-span-7 space-y-8"
-            data-testid="contact-form"
-          >
+         <motion.form
+  action="https://formspree.io/f/mvzypkgp"
+  method="POST"
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.8 }}
+  className="lg:col-span-7 space-y-8"
+  data-testid="contact-form"
+>
             <div className="grid sm:grid-cols-2 gap-8">
               <div>
                 <label className="block font-mono text-xs uppercase tracking-[0.2em] text-white/40 mb-2">
