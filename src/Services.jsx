@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import {
-  ShoppingCart,
+  Code2,
   Store,
   ShoppingBag,
   Music2,
