@@ -5,7 +5,7 @@ import {
   Store,
   ShoppingBag,
   Music2,
-  Code2,
+  ShoppingCart,
   Globe,
   Search,
   ListChecks,
