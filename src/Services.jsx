@@ -83,10 +83,13 @@ export default function Services() {
                   {s.desc}
                 </p>
 
-                <div className="mt-8 flex items-center gap-2 text-white/40 group-hover:text-[#FFC300] transition-colors font-mono text-xs uppercase tracking-[0.2em]">
-                  Learn more
-                  <ArrowUpRight size={14} className="group-hover:rotate-45 transition-transform" />
-                </div>
+                <a
+                  href="/website-development"
+  className="mt-8 flex items-center gap-2 text-white/40 group-hover:text-[#FFC300] transition-colors font-mono text-xs uppercase tracking-[0.2em]"
+>
+  Learn more
+  <ArrowUpRight size={14} className="group-hover:rotate-45 transition-transform" />
+</a>
 
                 <div className="absolute top-6 right-8 font-mono text-xs text-white/15">
                   {String(i + 1).padStart(2, "0")}
