@@ -143,13 +143,15 @@ export default function Contact() {
             
             {/* EXACT EMERGENT IMAGE */}
             <div
-              className="absolute inset-0 bg-cover bg-[60%_center] scale-100"
-              style={{
-                backgroundImage:
-                  "url('https://static.prod-images.emergentagent.com/jobs/8ff3f2b7-ffbe-49df-8f10-f35a16dfc9ed/images/8178303afe4164fff5ba26fa2f662c6626314eab814d61fb1a10244ed20fd872.png')",
-                backgroundPosition: "center",
-              }}
-            />
+  className="absolute inset-0"
+  style={{
+    backgroundImage:
+      "url('https://images.unsplash.com/photo-1545239351-1141bd82e8a6?q=80&w=2070&auto=format&fit=crop')",
+    backgroundSize: "135%",
+    backgroundPosition: "62% center",
+    backgroundRepeat: "no-repeat",
+  }}
+/>
 
             {/* DARK OVERLAY */}
             <div className="absolute inset-0 bg-black/45" />
