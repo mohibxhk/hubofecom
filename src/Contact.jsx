@@ -140,20 +140,20 @@ export default function Contact() {
             className="relative rounded-[32px] overflow-hidden border border-white/10 shadow-[0_0_60px_rgba(255,196,0,0.08)]"
           >
             
-            {/* MAP IMAGE */}
+            {/* ORIGINAL EMERGENT IMAGE */}
             <div
-              className="absolute inset-0 bg-cover bg-center"
+              className="absolute inset-0 bg-cover bg-center opacity-35"
               style={{
                 backgroundImage:
-  "url('https://images.unsplash.com/photo-1545239351-1141bd82e8a6?q=80&w=2070&auto=format&fit=crop')",
+                  "url('https://images.unsplash.com/photo-1526378800651-c1a1572e6d9f?q=80&w=1974&auto=format&fit=crop')",
               }}
             />
 
             {/* DARK OVERLAY */}
-            <div className="absolute inset-0 bg-black/55" />
+            <div className="absolute inset-0 bg-black/45 backdrop-blur-[1px]" />
 
-            {/* RED/YELLOW GLOW */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,196,0,0.12),transparent_40%)]" />
+            {/* GLOW */}
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,196,0,0.08),transparent_40%)]" />
 
             {/* CONTENT */}
             <div className="relative z-10 flex flex-col justify-end h-full min-h-[650px] p-10">
