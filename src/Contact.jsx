@@ -141,19 +141,19 @@ export default function Contact() {
             className="relative rounded-[32px] overflow-hidden border border-white/10 shadow-[0_0_60px_rgba(255,196,0,0.08)]"
           >
             
-            {/* MAP IMAGE */}
+            {/* ORIGINAL EMERGENT IMAGE */}
             <div
               className="absolute inset-0 bg-cover bg-center"
               style={{
                 backgroundImage:
-                  "url('https://images.unsplash.com/photo-1545239351-1141bd82e8a6?q=80&w=2070&auto=format&fit=crop')",
+                  "url('https://static.prod-images.emergentagent.com/jobs/8ff3f2b7-ffbe-49df-8f10-f35a16dfc9ed/images/8178303afe4164fff5ba26fa2f662c6626314eab814d61fb1a10244ed20fd872.png')",
               }}
             />
 
             {/* DARK OVERLAY */}
             <div className="absolute inset-0 bg-black/55" />
 
-            {/* RED/YELLOW GLOW */}
+            {/* GLOW */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,196,0,0.12),transparent_40%)]" />
 
             {/* CONTENT */}
