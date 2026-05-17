@@ -1,3 +1,4 @@
+import WordpressStoreDev from "./WordpressStoreDev";
 import MultiChannelExpertise from "./MultiChannelExpertise";
 import ProjectForm from "./ProjectForm";
 import ExperienceJourney from "./ExperienceJourney";
@@ -20,10 +21,10 @@ function App() {
     <>
       {window.location.pathname === "/website-development" ? (
         <WebsiteDevelopment />
-     ) : window.location.pathname === "/international-clients" ? (
-  <InternationalClients />
-) : window.location.pathname === "/multi-channel-expertise" ? (
+    ) : window.location.pathname === "/multi-channel-expertise" ? (
   <MultiChannelExpertise />
+) : window.location.pathname === "/wordpress-store-dev" ? (
+  <WordpressStoreDev />
 ) : (
         <div className="App">
           <Navigation />
