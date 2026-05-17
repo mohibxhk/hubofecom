@@ -52,12 +52,15 @@ export default function Footer() {
 
         <div className="mt-20 grid md:grid-cols-12 gap-10 pb-10 border-b border-white/5">
           <div className="md:col-span-5">
-            <div className="flex items-center gap-2 font-heading font-black text-xl tracking-tighter">
-              <span className="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-gradient-to-br from-[#FFE066] to-[#B8860B] text-black">
-                H
-              </span>
-              <span className="text-white">Hubofecom<span className="text-[#FFC300]">.</span></span>
-            </div>
+           <div className="flex items-center gap-4">
+  <div className="w-14 h-14 rounded-2xl bg-[#FFC300] flex items-center justify-center shadow-[0_0_30px_rgba(255,195,0,0.35)]">
+    <span className="text-black font-black text-2xl">H</span>
+  </div>
+
+  <h2 className="text-4xl font-black tracking-tight text-white">
+    Hubofecom<span className="text-[#FFC300]">.</span>
+  </h2>
+</div>
             <p className="mt-4 text-white/50 text-sm max-w-sm">
               Premium eCommerce development & marketplace management for global brands.
               Amazon · eBay · Walmart · TikTok Shop · Shopify · WooCommerce.
