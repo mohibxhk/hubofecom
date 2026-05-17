@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import logo from "./logo.png";
+import logo from "./IMG_2826_Nero_AI_Image_Upscaler_Photo_Face-PhotoRoom.png";
 
 const links = [
   { id: "home", label: "Home" },
