@@ -9,29 +9,40 @@ body,
 #root{
   margin: 0;
   padding: 0;
-  background: #000;
   overflow-x: hidden;
-}
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-.input-neon {
-  width: 100%;
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid rgba(255,255,255,0.15);
-  padding: 16px 0;
+  background: linear-gradient(
+    to bottom,
+    #050816,
+    #070b1a,
+    #000000
+  );
   color: white;
-  font-size: 16px;
-  outline: none;
-  transition: all 0.3s ease;
 }
 
-.input-neon::placeholder {
-  color: rgba(255,255,255,0.35);
+/* Premium Dark Blue Theme */
+
+body{
+  background-attachment: fixed;
 }
 
-.input-neon:focus {
-  border-bottom: 1px solid #FFC300;
-  box-shadow: 0 8px 20px rgba(255,195,0,0.08);
+/* Scrollbar */
+
+::-webkit-scrollbar{
+  width: 8px;
+}
+
+::-webkit-scrollbar-track{
+  background: #050816;
+}
+
+::-webkit-scrollbar-thumb{
+  background: #FFC300;
+  border-radius: 20px;
+}
+
+/* Selection */
+
+::selection{
+  background: #FFC300;
+  color: black;
 }
