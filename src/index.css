@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 *{
   margin: 0;
   padding: 0;
@@ -17,9 +21,8 @@ body,
     #000000
   );
   color: white;
+  min-height: 100%;
 }
-
-/* Premium Dark Blue Theme */
 
 body{
   background-attachment: fixed;
