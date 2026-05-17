@@ -138,35 +138,33 @@ export default function Contact() {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
-            className="relative rounded-[32px] overflow-hidden border border-white/10 shadow-[0_0_60px_rgba(255,196,0,0.08)]"
+            className="relative rounded-[32px] overflow-hidden border border-white/10 shadow-[0_0_60px_rgba(255,196,0,0.08)] min-h-[720px]"
           >
             
-            {/* ORIGINAL EMERGENT IMAGE */}
+            {/* EXACT EMERGENT IMAGE */}
             <div
-              className="absolute inset-0 bg-cover bg-center"
+              className="absolute inset-0 bg-cover bg-center scale-110"
               style={{
                 backgroundImage:
                   "url('https://static.prod-images.emergentagent.com/jobs/8ff3f2b7-ffbe-49df-8f10-f35a16dfc9ed/images/8178303afe4164fff5ba26fa2f662c6626314eab814d61fb1a10244ed20fd872.png')",
+                backgroundPosition: "center",
               }}
             />
 
             {/* DARK OVERLAY */}
-            <div className="absolute inset-0 bg-black/55" />
-
-            {/* GLOW */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,196,0,0.12),transparent_40%)]" />
+            <div className="absolute inset-0 bg-black/45" />
 
             {/* CONTENT */}
-            <div className="relative z-10 flex flex-col justify-end h-full min-h-[650px] p-10">
+            <div className="relative z-10 flex flex-col justify-end h-full p-10">
               
               {/* GLASS BOX */}
-              <div className="bg-black/55 backdrop-blur-md border border-white/10 rounded-3xl p-8">
+              <div className="bg-black/45 backdrop-blur-xl border border-white/10 rounded-[28px] p-8">
                 
                 <p className="text-xs uppercase tracking-[0.35em] text-[#FFC300] mb-8">
                   Get In Touch
                 </p>
 
-                <div className="space-y-6 text-white/80">
+                <div className="space-y-6 text-white/85">
                   
                   <div className="flex items-center gap-4">
                     <Mail size={20} className="text-[#FFC300]" />
