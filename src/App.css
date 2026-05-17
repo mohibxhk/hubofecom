@@ -3,3 +3,19 @@
   background: #0A0A0A;
   color: #fff;
 }
+body {
+  margin: 0;
+  padding: 0;
+  background: #050816;
+  overflow-x: hidden;
+  font-family: sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#root {
+  background: #050816;
+  min-height: 100vh;
+}
