@@ -27,6 +27,21 @@ export default function WebsiteDevelopment() {
   ];
 
   return (
+    <>
+  <div className="fixed top-6 left-6 z-50">
+    <a
+      href="/"
+      className="flex items-center gap-3"
+    >
+      <div className="w-14 h-14 rounded-2xl bg-[#FFC300] flex items-center justify-center shadow-[0_0_30px_rgba(255,195,0,0.35)]">
+        <span className="text-black font-black text-2xl">H</span>
+      </div>
+
+      <h2 className="text-3xl font-black tracking-tight text-white">
+        Hubofecom<span className="text-[#FFC300]">.</span>
+      </h2>
+    </a>
+  </div>
     <div className="min-h-screen bg-black text-white overflow-hidden">
       
       {/* Hero Section */}
@@ -107,5 +122,6 @@ export default function WebsiteDevelopment() {
         </div>
       </section>
     </div>
-  );
+ </>
+);
 }
