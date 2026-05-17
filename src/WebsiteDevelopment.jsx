@@ -58,8 +58,7 @@ export default function WebsiteDevelopment() {
           </h1>
 
           <p className="mt-8 text-lg text-white/60 max-w-2xl leading-relaxed">
-            We create ultra modern eCommerce websites with premium UI,
-            smooth animations, fast loading speed and high conversion design.
+            We create ultra-professional eCommerce websites using React, Tailwind CSS, JavaScript, Framer Motion, Node.js, and Vercel deployment — built with premium UI, smooth animations, fast loading speed, and high-conversion design.
           </p>
 
           <motion.a
