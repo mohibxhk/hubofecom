@@ -67,9 +67,7 @@ export default function Navigation() {
   <span className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-[#FFD84D] to-[#B8860B] shadow-[0_0_30px_rgba(255,195,0,0.35)] text-black text-3xl font-black">
   H
 </span>
-    alt="Hubofecom Logo"
-    className="h-14 w-14 object-contain"
-  />
+    
 
   <span className="text-white text-[38px] font-black tracking-tight leading-none">
     Hubofecom
