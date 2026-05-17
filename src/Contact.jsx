@@ -15,10 +15,10 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative min-h-screen bg-[#050816] text-white pt-32 pb-24 overflow-hidden"
+      className="relative min-h-screen bg-black text-white pt-32 pb-24 overflow-hidden"
     >
-      {/* BACKGROUND */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(0,80,255,0.12),transparent_25%),radial-gradient(circle_at_bottom_right,rgba(255,196,0,0.08),transparent_25%)]" />
+      {/* PREMIUM BACKGROUND */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,196,0,0.08),transparent_25%),radial-gradient(circle_at_bottom_right,rgba(255,0,80,0.08),transparent_25%)]" />
 
       <div className="relative max-w-7xl mx-auto px-6 md:px-12">
         
@@ -137,24 +137,30 @@ export default function Contact() {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
-            className="relative rounded-[32px] overflow-hidden border border-white/10 bg-[#070707] shadow-[0_0_60px_rgba(0,80,255,0.08)]"
+            className="relative rounded-[32px] overflow-hidden border border-white/10 shadow-[0_0_60px_rgba(255,196,0,0.08)]"
           >
+            
             {/* MAP IMAGE */}
             <div
-              className="absolute inset-0 bg-cover bg-center opacity-30"
+              className="absolute inset-0 bg-cover bg-center"
               style={{
                 backgroundImage:
-                  "url('https://images.unsplash.com/photo-1526378800651-c1a1572e6d9f?q=80&w=1974&auto=format&fit=crop')",
+                  "url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070&auto=format&fit=crop')",
               }}
             />
 
-            {/* OVERLAY */}
-            <div className="absolute inset-0 bg-black/50 backdrop-blur-[1px]" />
+            {/* DARK OVERLAY */}
+            <div className="absolute inset-0 bg-black/55" />
+
+            {/* RED/YELLOW GLOW */}
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,196,0,0.12),transparent_40%)]" />
 
             {/* CONTENT */}
-            <div className="relative z-10 p-10 flex flex-col justify-end h-full min-h-[650px]">
+            <div className="relative z-10 flex flex-col justify-end h-full min-h-[650px] p-10">
               
-              <div>
+              {/* GLASS BOX */}
+              <div className="bg-black/55 backdrop-blur-md border border-white/10 rounded-3xl p-8">
+                
                 <p className="text-xs uppercase tracking-[0.35em] text-[#FFC300] mb-8">
                   Get In Touch
                 </p>
@@ -178,47 +184,21 @@ export default function Contact() {
                     </p>
                   </div>
                 </div>
-              </div>
 
-              {/* SOCIALS */}
-              <div className="flex gap-4 mt-12">
-                
-                <a
-                  href="https://github.com"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="w-12 h-12 rounded-full border border-white/10 bg-black/40 flex items-center justify-center hover:bg-[#FFC300] hover:text-black transition-all duration-300"
-                >
-                  <Github size={18} />
-                </a>
-
-                <a
-                  href="https://linkedin.com"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="w-12 h-12 rounded-full border border-white/10 bg-black/40 flex items-center justify-center hover:bg-[#FFC300] hover:text-black transition-all duration-300"
-                >
-                  <Linkedin size={18} />
-                </a>
-
-                <a
-                  href="https://twitter.com"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="w-12 h-12 rounded-full border border-white/10 bg-black/40 flex items-center justify-center hover:bg-[#FFC300] hover:text-black transition-all duration-300"
-                >
-                  <Twitter size={18} />
-                </a>
-
-                <a
-                  href="https://instagram.com"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="w-12 h-12 rounded-full border border-white/10 bg-black/40 flex items-center justify-center hover:bg-[#FFC300] hover:text-black transition-all duration-300"
-                >
-                  <Instagram size={18} />
-                </a>
-
+                {/* SOCIALS */}
+                <div className="flex gap-4 mt-10 pt-8 border-t border-white/10">
+                  
+                  {[Github, Linkedin, Twitter, Instagram].map(
+                    (Icon, index) => (
+                      <button
+                        key={index}
+                        className="w-12 h-12 rounded-full border border-white/10 bg-black/40 flex items-center justify-center hover:bg-[#FFC300] hover:text-black transition-all duration-300"
+                      >
+                        <Icon size={18} />
+                      </button>
+                    )
+                  )}
+                </div>
               </div>
             </div>
           </motion.div>
