@@ -35,9 +35,7 @@ export default function ExperienceJourney() {
         </h1>
 
         <p className="mt-10 text-white/60 text-lg leading-relaxed max-w-3xl">
-          Since 2019, we have helped international brands scale their
-          eCommerce businesses across Amazon, eBay, Shopify, Walmart,
-          WooCommerce and TikTok Shop marketplaces.
+          Since 2019, we have helped international brands scale and grow their eCommerce businesses across Amazon, eBay, Shopify, Walmart, WooCommerce, and TikTok Shop marketplaces. Our team specializes in building ultra-professional, high-converting eCommerce websites using modern technologies including React, Tailwind CSS, JavaScript, Framer Motion, Node.js, and Vercel deployment. We focus on premium UI/UX design, fast-loading performance, responsive development, smooth animations, SEO optimization, and scalable backend solutions to create powerful online stores that drive sales and brand growth.
         </p>
 
         <div className="mt-16 grid md:grid-cols-3 gap-6">
