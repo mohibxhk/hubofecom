@@ -94,12 +94,15 @@ export default function ProjectForm() {
           </div>
 
           <motion.button
-            whileHover={{ scale: 1.04 }}
-            whileTap={{ scale: 0.96 }}
-            className="mt-4 px-10 py-5 rounded-full bg-[#FFC300] text-black font-bold text-lg shadow-[0_0_40px_rgba(255,195,0,0.35)]"
-          >
-            Submit Project Request
-          </motion.button>
+  whileHover={{ scale: 1.04 }}
+  whileTap={{ scale: 0.96 }}
+  onClick={() => {
+    alert("Project Request Submitted Successfully!");
+  }}
+  className="mt-4 px-10 py-5 rounded-full bg-[#FFC300] text-black font-bold text-lg shadow-[0_0_40px_rgba(255,195,0,0.35)]"
+>
+  Submit Project Request
+</motion.button>
 
         </div>
       </motion.div>
