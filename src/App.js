@@ -1,3 +1,4 @@
+import ProjectForm from "./ProjectForm";
 import "./App.css";
 
 import Navigation from "./Navigation";
@@ -15,7 +16,9 @@ function App() {
   <>
     {window.location.pathname === "/website-development" ? (
       <WebsiteDevelopment />
-    ) : (
+    ) : window.location.pathname === "/project-form" ? (
+  <ProjectForm />
+) : (
       <div className="App">
         <Navigation />
         <Hero />
