@@ -21,11 +21,17 @@ function App() {
     <>
       {window.location.pathname === "/website-development" ? (
         <WebsiteDevelopment />
-    ) : window.location.pathname === "/multi-channel-expertise" ? (
-  <MultiChannelExpertise />
-) : window.location.pathname === "/wordpress-store-dev" ? (
-  <WordpressStoreDev />
-) : (
+      ) : window.location.pathname === "/project-form" ? (
+        <ProjectForm />
+      ) : window.location.pathname === "/experience-journey" ? (
+        <ExperienceJourney />
+      ) : window.location.pathname === "/international-clients" ? (
+        <InternationalClients />
+      ) : window.location.pathname === "/multi-channel-expertise" ? (
+        <MultiChannelExpertise />
+      ) : window.location.pathname === "/wordpress-store-dev" ? (
+        <WordpressStoreDev />
+      ) : (
         <div className="App">
           <Navigation />
           <Hero />
