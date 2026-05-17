@@ -1,6 +1,6 @@
-import InternationalClients from "./InternationalClients";
 import ProjectForm from "./ProjectForm";
 import ExperienceJourney from "./ExperienceJourney";
+import InternationalClients from "./InternationalClients";
 
 import "./App.css";
 
@@ -23,6 +23,8 @@ function App() {
         <ProjectForm />
       ) : window.location.pathname === "/experience-journey" ? (
         <ExperienceJourney />
+      ) : window.location.pathname === "/international-clients" ? (
+        <InternationalClients />
       ) : (
         <div className="App">
           <Navigation />
