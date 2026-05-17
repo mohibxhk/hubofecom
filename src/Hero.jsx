@@ -128,7 +128,7 @@ export default function Hero() {
               <div className="absolute bottom-5 left-5 right-5 glass-panel rounded-2xl p-4 flex items-center gap-3">
                 <div className="w-2 h-2 rounded-full bg-[#FFC300] animate-pulse-glow" />
                 <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/70">
-                  Currently in the studio
+                 PREMIUM ECOMMERCE & WEB SOLUTIONS
                 </div>
               </div>
             </div>
