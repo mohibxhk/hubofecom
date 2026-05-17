@@ -1,15 +1,24 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Send } from "lucide-react";
+import {
+  Send,
+  Mail,
+  Phone,
+  MapPin,
+  Github,
+  Linkedin,
+  Twitter,
+  Instagram,
+} from "lucide-react";
 
 export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative min-h-screen bg-black text-white pt-32 pb-24 overflow-hidden"
+      className="relative min-h-screen bg-[#050816] text-white pt-32 pb-24 overflow-hidden"
     >
-      {/* Background Glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(20,60,255,0.08),transparent_25%),radial-gradient(circle_at_bottom_right,rgba(255,196,0,0.06),transparent_25%)]" />
+      {/* BACKGROUND */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(0,80,255,0.12),transparent_25%),radial-gradient(circle_at_bottom_right,rgba(255,196,0,0.08),transparent_25%)]" />
 
       <div className="relative max-w-7xl mx-auto px-6 md:px-12">
         
@@ -37,17 +46,25 @@ export default function Contact() {
           </p>
         </motion.div>
 
-        {/* FORM + CARD */}
+        {/* GRID */}
         <div className="grid lg:grid-cols-2 gap-20 mt-24">
           
-          {/* FORM */}
+          {/* LEFT FORM */}
           <motion.form
+            action="https://api.web3forms.com/submit"
+            method="POST"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
             className="space-y-14"
           >
+            <input
+              type="hidden"
+              name="access_key"
+              value="fb710372-b6f6-44cb-a6c7-c7218bb8c842"
+            />
+
             <div className="grid md:grid-cols-2 gap-10">
               
               <div>
@@ -57,7 +74,9 @@ export default function Contact() {
 
                 <input
                   type="text"
+                  name="name"
                   placeholder="Jane Doe"
+                  required
                   className="w-full bg-transparent border-b border-white/10 py-4 text-white placeholder:text-white/30 outline-none focus:border-[#FFC300] transition-all duration-300"
                 />
               </div>
@@ -69,7 +88,9 @@ export default function Contact() {
 
                 <input
                   type="email"
+                  name="email"
                   placeholder="jane@company.com"
+                  required
                   className="w-full bg-transparent border-b border-white/10 py-4 text-white placeholder:text-white/30 outline-none focus:border-[#FFC300] transition-all duration-300"
                 />
               </div>
@@ -82,6 +103,7 @@ export default function Contact() {
 
               <input
                 type="text"
+                name="subject"
                 placeholder="New project / Question / Collaboration"
                 className="w-full bg-transparent border-b border-white/10 py-4 text-white placeholder:text-white/30 outline-none focus:border-[#FFC300] transition-all duration-300"
               />
@@ -93,7 +115,9 @@ export default function Contact() {
               </label>
 
               <textarea
+                name="message"
                 placeholder="Tell me about your project, timeline and goals..."
+                required
                 className="w-full bg-transparent border-b border-white/10 py-4 min-h-[140px] text-white placeholder:text-white/30 outline-none resize-none focus:border-[#FFC300] transition-all duration-300"
               />
             </div>
@@ -107,45 +131,94 @@ export default function Contact() {
             </button>
           </motion.form>
 
-          {/* CONTACT CARD */}
+          {/* RIGHT CARD */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
-            className="relative rounded-[32px] overflow-hidden border border-white/10 bg-[#070707]"
+            className="relative rounded-[32px] overflow-hidden border border-white/10 bg-[#070707] shadow-[0_0_60px_rgba(0,80,255,0.08)]"
           >
-            <img
-  src="https://images.unsplash.com/photo-1526378800651-c1a1572e6d9f?q=80&w=1974&auto=format&fit=crop"
-              alt=""
-              className="absolute inset-0 w-full h-full object-cover opacity-30"
+            {/* MAP IMAGE */}
+            <div
+              className="absolute inset-0 bg-cover bg-center opacity-30"
+              style={{
+                backgroundImage:
+                  "url('https://images.unsplash.com/photo-1526378800651-c1a1572e6d9f?q=80&w=1974&auto=format&fit=crop')",
+              }}
             />
 
-            <div className="relative z-10 p-10 flex flex-col justify-end h-full min-h-[650px] bg-black/40 backdrop-blur-sm">
+            {/* OVERLAY */}
+            <div className="absolute inset-0 bg-black/50 backdrop-blur-[1px]" />
+
+            {/* CONTENT */}
+            <div className="relative z-10 p-10 flex flex-col justify-end h-full min-h-[650px]">
               
               <div>
                 <p className="text-xs uppercase tracking-[0.35em] text-[#FFC300] mb-8">
                   Get In Touch
                 </p>
 
-                <div className="space-y-5 text-white/75">
-                  <p className="text-lg">sales@hubofecom.com</p>
-                  <p className="text-lg">+39 350 079 4831</p>
-                  <p className="text-lg">
-                    Italy · Serving USA, UK, AUS, CA
-                  </p>
+                <div className="space-y-6 text-white/80">
+                  
+                  <div className="flex items-center gap-4">
+                    <Mail size={20} className="text-[#FFC300]" />
+                    <p className="text-lg">sales@hubofecom.com</p>
+                  </div>
+
+                  <div className="flex items-center gap-4">
+                    <Phone size={20} className="text-[#FFC300]" />
+                    <p className="text-lg">+39 350 079 4831</p>
+                  </div>
+
+                  <div className="flex items-center gap-4">
+                    <MapPin size={20} className="text-[#FFC300]" />
+                    <p className="text-lg">
+                      Italy · Serving USA, UK, AUS, CA
+                    </p>
+                  </div>
                 </div>
               </div>
 
+              {/* SOCIALS */}
               <div className="flex gap-4 mt-12">
-                {["Github", "LinkedIn", "Twitter", "Instagram"].map((item) => (
-                  <button
-                    key={item}
-                    className="w-12 h-12 rounded-full border border-white/10 bg-white/5 hover:bg-[#FFC300] hover:text-black transition-all duration-300 text-sm"
-                  >
-                    {item[0]}
-                  </button>
-                ))}
+                
+                <a
+                  href="https://github.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-12 h-12 rounded-full border border-white/10 bg-black/40 flex items-center justify-center hover:bg-[#FFC300] hover:text-black transition-all duration-300"
+                >
+                  <Github size={18} />
+                </a>
+
+                <a
+                  href="https://linkedin.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-12 h-12 rounded-full border border-white/10 bg-black/40 flex items-center justify-center hover:bg-[#FFC300] hover:text-black transition-all duration-300"
+                >
+                  <Linkedin size={18} />
+                </a>
+
+                <a
+                  href="https://twitter.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-12 h-12 rounded-full border border-white/10 bg-black/40 flex items-center justify-center hover:bg-[#FFC300] hover:text-black transition-all duration-300"
+                >
+                  <Twitter size={18} />
+                </a>
+
+                <a
+                  href="https://instagram.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-12 h-12 rounded-full border border-white/10 bg-black/40 flex items-center justify-center hover:bg-[#FFC300] hover:text-black transition-all duration-300"
+                >
+                  <Instagram size={18} />
+                </a>
+
               </div>
             </div>
           </motion.div>
