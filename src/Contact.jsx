@@ -116,7 +116,7 @@ export default function Contact() {
             className="relative rounded-[32px] overflow-hidden border border-white/10 bg-[#070707]"
           >
             <img
-              src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5"
+  src="https://images.unsplash.com/photo-1526378800651-c1a1572e6d9f?q=80&w=1974&auto=format&fit=crop"
               alt=""
               className="absolute inset-0 w-full h-full object-cover opacity-30"
             />
