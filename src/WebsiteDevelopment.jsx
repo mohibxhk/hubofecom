@@ -62,13 +62,13 @@ export default function WebsiteDevelopment() {
           </p>
 
           <motion.a
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            href="/#contact"
-            className="inline-block mt-10 px-8 py-4 rounded-full bg-[#FFC300] text-black font-bold shadow-[0_0_40px_rgba(255,195,0,0.35)]"
-          >
-            Start Your Project
-          </motion.a>
+  whileHover={{ scale: 1.05 }}
+  whileTap={{ scale: 0.95 }}
+  href="/project-form"
+  className="inline-block mt-10 px-8 py-4 rounded-full bg-[#FFC300] text-black font-bold shadow-[0_0_40px_rgba(255,195,0,0.35)]"
+>
+  Start Your Project
+</motion.a>
         </motion.div>
       </section>
 
