@@ -53,7 +53,7 @@ export default function Hero() {
           <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-panel">
             <Sparkles size={14} className="text-[#FFC300]" />
             <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#FFC300]">
-              Global eCommerce Agency · Since 2019
+              Global eCommerce and Website Development Agency · Since 2019
             </span>
           </motion.div>
 
