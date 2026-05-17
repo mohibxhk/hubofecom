@@ -38,3 +38,15 @@ textarea.input-neon {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+html,
+body,
+#root {
+  background: #070707 !important;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+body {
+  overscroll-behavior: none;
+}
