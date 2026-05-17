@@ -60,18 +60,23 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-6 md:px-12 h-20 flex items-center justify-between">
 
         {/* LOGO */}
-        <button
-          onClick={() => {
-            window.location.href = "/";
-          }}
-          className="flex items-center gap-3"
-        >
-          <img
-            src={logo}
-            alt="Hubofecom Logo"
-            className="h-14 w-auto object-contain"
-          />
-        </button>
+<button
+  onClick={() => {
+    window.location.href = "/";
+  }}
+  className="flex items-center gap-4"
+>
+  <img
+    src={logo}
+    alt="Hubofecom Logo"
+    className="h-14 w-14 object-contain"
+  />
+
+  <span className="text-white text-[38px] font-black tracking-tight leading-none">
+    Hubofecom
+    <span className="text-[#FFC300]">.</span>
+  </span>
+</button>
 
         {/* DESKTOP MENU */}
         <ul className="hidden md:flex items-center gap-2">
