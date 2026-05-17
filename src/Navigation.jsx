@@ -65,7 +65,7 @@ export default function Navigation() {
   className="flex items-center gap-4"
 >
   <img
-    src={logo}
+    src="/favicon.png"
     alt="Hubofecom Logo"
     className="h-14 w-14 object-contain"
   />
