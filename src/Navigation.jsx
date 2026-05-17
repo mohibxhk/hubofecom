@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import logo from "./logo.png";
+
 const links = [
   { id: "home", label: "Home" },
   { id: "about", label: "About" },
@@ -63,12 +64,12 @@ export default function Navigation() {
           onClick={() => {
             window.location.href = "/";
           }}
-          className="flex items-center"
+          className="flex items-center gap-3"
         >
           <img
             src={logo}
             alt="Hubofecom Logo"
-            className="h-16 w-auto object-contain"
+            className="h-14 w-auto object-contain"
           />
         </button>
 
