@@ -46,7 +46,7 @@ const countries = [
 
 export default function InternationalClients() {
   return (
-    <div className="min-h-screen bg-black text-white overflow-hidden">
+    <div className="min-h-screen bg-black text-white overflow-hidden relative">
 
       {/* Background Glow */}
       <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#FFC300]/10 blur-[120px]" />
@@ -111,7 +111,7 @@ export default function InternationalClients() {
 
             {countries.map((country, i) => (
               <motion.div
-                key={country}
+                key={country.name}
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{
@@ -125,12 +125,12 @@ export default function InternationalClients() {
                 className="p-8 rounded-3xl bg-[#0F0F0F] border border-white/10 hover:border-[#FFC300]/40 hover:shadow-[0_0_40px_rgba(255,195,0,0.15)] transition-all duration-500"
               >
                 <h2 className="text-3xl font-black text-[#FFC300]">
-                  {country}
+                  {country.name}
                 </h2>
 
-               <p className="mt-4 text-white/55 text-sm leading-relaxed">
-  {country.description}
-</p>
+                <p className="mt-4 text-white/55 text-sm leading-relaxed">
+                  {country.description}
+                </p>
               </motion.div>
             ))}
 
