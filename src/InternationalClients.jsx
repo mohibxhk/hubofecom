@@ -2,14 +2,46 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const countries = [
-  "USA",
-  "United Kingdom",
-  "Canada",
-  "Germany",
-  "France",
-  "Italy",
-  "Australia",
-  "UAE",
+  {
+    name: "USA",
+    description:
+      "Helping American eCommerce brands scale with high-converting Shopify stores, Amazon growth strategies, and premium web solutions.",
+  },
+  {
+    name: "United Kingdom",
+    description:
+      "Providing modern eCommerce development and conversion-focused websites for UK businesses and online brands.",
+  },
+  {
+    name: "Canada",
+    description:
+      "Delivering powerful Shopify, WooCommerce, and custom web experiences for fast-growing Canadian companies.",
+  },
+  {
+    name: "Germany",
+    description:
+      "Building sleek, performance-driven eCommerce stores and business websites tailored for the German market.",
+  },
+  {
+    name: "France",
+    description:
+      "Creating premium digital commerce solutions and modern websites for ambitious brands across France.",
+  },
+  {
+    name: "Italy",
+    description:
+      "Supporting Italian businesses with responsive websites, branding solutions, and scalable online stores.",
+  },
+  {
+    name: "Australia",
+    description:
+      "Helping Australian brands grow online with custom eCommerce experiences and advanced website development.",
+  },
+  {
+    name: "UAE",
+    description:
+      "Delivering luxury-style eCommerce stores and premium web development services for businesses in the UAE.",
+  },
 ];
 
 export default function InternationalClients() {
