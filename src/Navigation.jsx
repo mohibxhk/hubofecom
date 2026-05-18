@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+
 const links = [
   { id: "home", label: "Home" },
   { id: "about", label: "About" },
@@ -58,48 +59,36 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-6 md:px-12 h-20 flex items-center justify-between">
 
         {/* LOGO */}
-{/* LOGO */}
-<button
-  onClick={() => {
-    window.location.href = "/";
-  }}
-  className="flex items-center gap-4"
->
-  <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-[#FFD84D] to-[#B8860B] shadow-[0_0_30px_rgba(255,195,0,0.35)]">
-    <span className="text-black text-3xl font-black">
-      H
-    </span>
-  </div>
-
-  <span className="text-white text-[38px] font-black tracking-tight leading-none">
-    Hubofecom
-    <span className="text-[#FFC300]">.</span>
-  </span>
-</button>
-
-       {/* DESKTOP MENU */}
-<div className="hidden lg:flex items-center gap-10">
-  {links.map((l) => (
-    <button
-      key={l.id}
-      onClick={() => go(l.id)}
-      className="text-white/80 hover:text-[#FFC300]"
-    >
-      {l.label}
-    </button>
-  ))}
-</div>
-        
-        {/* MOBILE TOGGLE */}
         <button
-          className="lg:hidden text-white"
-          onClick={() => setOpen(!open)}
+          onClick={() => {
+            window.location.href = "/";
+          }}
+          className="flex items-center gap-4"
         >
-          {open ? <X size={28} /> : <Menu size={28} />}
+          <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-[#FFD84D] to-[#B8860B] shadow-[0_0_30px_rgba(255,195,0,0.35)]">
+            <span className="text-black text-3xl font-black">
+              H
+            </span>
+          </div>
+
+          <span className="text-white text-[38px] font-black tracking-tight leading-none">
+            Hubofecom
+            <span className="text-[#FFC300]">.</span>
+          </span>
         </button>
-    {/* CTA */}
-      </div>
-        <div className="hidden lg:flex items-center">
+
+        {/* DESKTOP MENU */}
+        <div className="hidden lg:flex items-center gap-10 ml-auto">
+          {links.map((l) => (
+            <button
+              key={l.id}
+              onClick={() => go(l.id)}
+              className="text-white/80 hover:text-[#FFC300] transition"
+            >
+              {l.label}
+            </button>
+          ))}
+
           <button
             onClick={() => go("contact")}
             className="px-6 py-3 rounded-full bg-gradient-to-r from-[#FFC300] to-[#FFB800] text-black text-sm font-bold hover:scale-105 hover:shadow-[0_0_30px_rgba(255,195,0,0.45)] transition-all duration-300"
@@ -107,6 +96,15 @@ export default function Navigation() {
             Hire Me
           </button>
         </div>
+
+        {/* MOBILE TOGGLE */}
+        <button
+          className="lg:hidden text-white"
+          onClick={() => setOpen(!open)}
+        >
+          {open ? <X size={28} /> : <Menu size={28} />}
+        </button>
+      </div>
 
       {/* MOBILE MENU */}
       <AnimatePresence>
