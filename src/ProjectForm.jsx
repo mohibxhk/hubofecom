@@ -1,16 +1,55 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 
 export default function ProjectForm() {
+
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    setLoading(true);
+
+    const formData = new FormData(e.target);
+
+    formData.append(
+      "access_key",
+      "fb710372-b6f6-44cb-a6c7-c7218bb8c842"
+    );
+
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: json,
+    });
+
+    const result = await response.json();
+
+    setLoading(false);
+
+    if (result.success) {
+      setSuccess(true);
+      e.target.reset();
+    }
+  };
+
   return (
     <div className="min-h-screen bg-black text-white px-6 md:px-16 py-20">
-      
+
       <motion.div
         initial={{ opacity: 0, y: 80 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
         className="max-w-4xl mx-auto"
       >
+
         <p className="uppercase tracking-[0.4em] text-[#FFC300] text-sm mb-4">
           // Client Project Form
         </p>
@@ -26,32 +65,39 @@ export default function ProjectForm() {
           business goals and design vision.
         </p>
 
+        {success && (
+          <div className="mt-8 bg-green-500/10 border border-green-500 text-green-400 px-6 py-4 rounded-2xl">
+            Your project request has been submitted successfully.
+          </div>
+        )}
+
         <form
-          action="https://api.web3forms.com/submit"
-          method="POST"
+          onSubmit={handleSubmit}
           className="mt-14 space-y-8"
         >
-          <input
-            type="hidden"
-            name="access_key"
-            value="fb710372-b6f6-44cb-a6c7-c7218bb8c842"
-          />
 
           <div className="grid md:grid-cols-2 gap-6">
+
             <input
+              type="text"
               name="name"
+              required
               placeholder="Your Name"
               className="bg-[#111] border border-white/10 rounded-2xl px-6 py-5 outline-none focus:border-[#FFC300]"
             />
 
             <input
+              type="email"
               name="email"
+              required
               placeholder="Business Email"
               className="bg-[#111] border border-white/10 rounded-2xl px-6 py-5 outline-none focus:border-[#FFC300]"
             />
+
           </div>
 
           <input
+            type="text"
             name="brand"
             placeholder="Business / Brand Name"
             className="w-full bg-[#111] border border-white/10 rounded-2xl px-6 py-5 outline-none focus:border-[#FFC300]"
@@ -96,6 +142,7 @@ export default function ProjectForm() {
           />
 
           <div className="grid md:grid-cols-2 gap-6">
+
             <select
               name="budget"
               className="bg-[#111] border border-white/10 rounded-2xl px-6 py-5 outline-none focus:border-[#FFC300]"
@@ -117,19 +164,23 @@ export default function ProjectForm() {
               <option>1-2 Months</option>
               <option>Flexible</option>
             </select>
+
           </div>
 
           <motion.button
             type="submit"
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.96 }}
+            disabled={loading}
             className="mt-4 px-10 py-5 rounded-full bg-[#FFC300] text-black font-bold text-lg shadow-[0_0_40px_rgba(255,195,0,0.35)]"
           >
-            Submit Project Request
+            {loading ? "Submitting..." : "Submit Project Request"}
           </motion.button>
 
         </form>
+
       </motion.div>
+
     </div>
   );
 }
