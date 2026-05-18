@@ -119,7 +119,7 @@ export default function Navigation() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden overflow-hidden bg-[#050816]/98 backdrop-blur-2xl border-t border-[#1E3A8A]/20"
+            className="lg:hidden overflow-hidden bg-[#050816]/98 backdrop-blur-2xl border-t border-[#1E3A8A]/20"
           >
             <ul className="px-6 py-6 space-y-4">
               {links.map((l) => (
