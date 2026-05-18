@@ -88,13 +88,6 @@ export default function Navigation() {
       {l.label}
     </button>
   ))}
-
-  <button
-    onClick={() => go("contact")}
-    className="px-6 py-3 rounded-full bg-gradient-to-r from-[#FFC300] to-[#FFB800] text-black text-sm font-bold hover:scale-105 transition"
-  >
-    Hire Me
-  </button>
 </div>
         
         {/* MOBILE TOGGLE */}
