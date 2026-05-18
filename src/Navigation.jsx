@@ -102,6 +102,15 @@ export default function Navigation() {
           {open ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
+    {/* CTA */}
+        <div className="hidden md:block">
+          <button
+            onClick={() => go("contact")}
+            className="px-6 py-3 rounded-full bg-gradient-to-r from-[#FFC300] to-[#FFB800] text-black text-sm font-bold hover:scale-105 hover:shadow-[0_0_30px_rgba(255,195,0,0.45)] transition-all duration-300"
+          >
+            Hire Me
+          </button>
+        </div>
 
       {/* MOBILE MENU */}
       <AnimatePresence>
