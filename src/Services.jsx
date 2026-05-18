@@ -20,26 +20,31 @@ const services = [
     desc: "Modern responsive websites using React, Tailwind CSS, JavaScript, Framer Motion, Node.js and Vercel deployment.",
     link: "/website-development",
   },
+
   {
     title: "Amazon Store Management",
     desc: "FBA/FBM operations, PPC campaigns, A+ content and Brand Registry mastery.",
     link: "/amazon-store-management",
   },
+
   {
     title: "Walmart Marketplace Management",
     desc: "Approval, catalog onboarding, repricing and Walmart Connect ad management.",
     link: "/walmart-marketplace-management",
   },
+
   {
     title: "TikTok Shop Management",
     desc: "Affiliate seeding, live-shopping setup and viral content commerce strategy.",
     link: "/tiktok-shop-management",
   },
+
   {
     title: "Shopify Store Development",
     desc: "Premium custom themes, headless storefronts and full-stack Shopify Plus builds.",
     link: "/shopify-store-development",
   },
+
   {
     title: "WooCommerce Development",
     desc: "WordPress eCommerce, custom plugins, payment integrations and speed tuning.",
