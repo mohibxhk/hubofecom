@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Code2, Globe, ShoppingCart, Layers } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 
 export default function AmazonStoreManagement() {
   const features = [
