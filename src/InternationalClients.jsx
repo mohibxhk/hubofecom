@@ -128,10 +128,9 @@ export default function InternationalClients() {
                   {country}
                 </h2>
 
-                <p className="mt-4 text-white/55 text-sm leading-relaxed">
-                  Successfully delivered premium eCommerce and website
-                  development services for businesses based in {country}.
-                </p>
+               <p className="mt-4 text-white/55 text-sm leading-relaxed">
+  {country.description}
+</p>
               </motion.div>
             ))}
 
