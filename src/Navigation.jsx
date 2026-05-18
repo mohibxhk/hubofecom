@@ -103,7 +103,7 @@ export default function Navigation() {
         </button>
     {/* CTA */}
       </div>
-        <div className="hidden md:block">
+        <div className="hidden lg:flex items-center">
           <button
             onClick={() => go("contact")}
             className="px-6 py-3 rounded-full bg-gradient-to-r from-[#FFC300] to-[#FFB800] text-black text-sm font-bold hover:scale-105 hover:shadow-[0_0_30px_rgba(255,195,0,0.45)] transition-all duration-300"
