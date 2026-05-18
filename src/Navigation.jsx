@@ -58,15 +58,19 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-6 md:px-12 h-20 flex items-center justify-between">
 
         {/* LOGO */}
+{/* LOGO */}
 <button
   onClick={() => {
     window.location.href = "/";
   }}
   className="flex items-center gap-4"
 >
-  <span className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-[#FFD84D] to-[#B8860B] shadow-[0_0_30px_rgba(255,195,0,0.35)] text-black text-3xl font-black">
-  H
-</span>
+  <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-[#FFD84D] to-[#B8860B] shadow-[0_0_30px_rgba(255,195,0,0.35)]">
+    <span className="text-black text-3xl font-black">
+      H
+    </span>
+  </div>
+
   <span className="text-white text-[38px] font-black tracking-tight leading-none">
     Hubofecom
     <span className="text-[#FFC300]">.</span>
