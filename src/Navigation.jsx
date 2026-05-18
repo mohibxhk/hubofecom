@@ -101,8 +101,8 @@ export default function Navigation() {
         >
           {open ? <X size={28} /> : <Menu size={28} />}
         </button>
-      </div>
     {/* CTA */}
+      </div>
         <div className="hidden md:block">
           <button
             onClick={() => go("contact")}
