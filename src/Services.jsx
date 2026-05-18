@@ -15,7 +15,6 @@ import {
 } from "lucide-react";
 
 const services = [
-  const services = [
   {
     title: "Website Development",
     desc: "Modern responsive websites using React, Tailwind CSS, JavaScript, Framer Motion, Node.js and Vercel deployment.",
