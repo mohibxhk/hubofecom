@@ -15,16 +15,37 @@ import {
 } from "lucide-react";
 
 const services = [
-  { icon: Code2, title: "Website Development", desc: "Modern responsive websites using React, Tailwind CSS, JavaScript, Framer Motion, Node.js and Vercel deployment.", accent: "from-[#FFE066] to-[#B8860B]" },
-  { icon: ShoppingBag, title: "Amazon Store Management", desc: "FBA/FBM operations, PPC campaigns, A+ content and Brand Registry mastery.", accent: "from-[#FFD700] to-[#B8860B]" },
-  { icon: Store, title: "Walmart Marketplace Management", desc: "Approval, catalog onboarding, repricing and Walmart Connect ad management.", accent: "from-[#FFE066] to-[#FFA500]" },
-  { icon: Music2, title: "TikTok Shop Management", desc: "Affiliate seeding, live-shopping setup and viral content commerce strategy.", accent: "from-[#FFC300] to-[#B8860B]" },
-  { icon: ShoppingCart, title: "Shopify Store Development", desc: "Premium custom themes, headless storefronts and full-stack Shopify Plus builds.", accent: "from-[#FFE066] to-[#FFC300]" },
-  { icon: Globe, title: "WooCommerce Development", desc: "WordPress eCommerce, custom plugins, payment integrations and speed tuning.", accent: "from-[#FFD700] to-[#FFA500]" },
-  { icon: Search, title: "SEO Optimization", desc: "Technical, on-page and marketplace SEO that earns rankings and conversions.", accent: "from-[#FFC300] to-[#FFA500]" },
-  { icon: ListChecks, title: "Product Listing Optimization", desc: "Keyword-rich titles, conversion-focused bullets, A+ content and lifestyle imagery.", accent: "from-[#FFE066] to-[#B8860B]" },
-  { icon: Headphones, title: "Customer Support Management", desc: "24/7 multi-channel support — chat, email, returns and review management.", accent: "from-[#FFD700] to-[#FFC300]" },
-  { icon: Package, title: "Order & Inventory Management", desc: "Centralized order routing, SKU sync, restock alerts and 3PL coordination.", accent: "from-[#FFE066] to-[#FFA500]" },
+  const services = [
+  {
+    title: "Website Development",
+    desc: "Modern responsive websites using React, Tailwind CSS, JavaScript, Framer Motion, Node.js and Vercel deployment.",
+    link: "/website-development",
+  },
+  {
+    title: "Amazon Store Management",
+    desc: "FBA/FBM operations, PPC campaigns, A+ content and Brand Registry mastery.",
+    link: "/amazon-store-management",
+  },
+  {
+    title: "Walmart Marketplace Management",
+    desc: "Approval, catalog onboarding, repricing and Walmart Connect ad management.",
+    link: "/walmart-marketplace-management",
+  },
+  {
+    title: "TikTok Shop Management",
+    desc: "Affiliate seeding, live-shopping setup and viral content commerce strategy.",
+    link: "/tiktok-shop-management",
+  },
+  {
+    title: "Shopify Store Development",
+    desc: "Premium custom themes, headless storefronts and full-stack Shopify Plus builds.",
+    link: "/shopify-store-development",
+  },
+  {
+    title: "WooCommerce Development",
+    desc: "WordPress eCommerce, custom plugins, payment integrations and speed tuning.",
+    link: "/woocommerce-development",
+  },
 ];
 
 export default function Services() {
@@ -84,7 +105,7 @@ export default function Services() {
                 </p>
 
                 <a
-                  href="/website-development"
+                  href={s.link}
   className="mt-8 flex items-center gap-2 text-white/40 group-hover:text-[#FFC300] transition-colors font-mono text-xs uppercase tracking-[0.2em]"
 >
   Learn more
