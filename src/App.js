@@ -4,6 +4,12 @@ import ProjectForm from "./ProjectForm";
 import ExperienceJourney from "./ExperienceJourney";
 import InternationalClients from "./InternationalClients";
 
+import AmazonStoreManagement from "./AmazonStoreManagement";
+import WalmartMarketplaceManagement from "./WalmartMarketplaceManagement";
+import TikTokShopManagement from "./TikTokShopManagement";
+import ShopifyStoreDevelopment from "./ShopifyStoreDevelopment";
+import WooCommerceDevelopment from "./WooCommerceDevelopment";
+
 import "./App.css";
 
 import Navigation from "./Navigation";
@@ -21,16 +27,37 @@ function App() {
     <>
       {window.location.pathname === "/website-development" ? (
         <WebsiteDevelopment />
+
+      ) : window.location.pathname === "/amazon-store-management" ? (
+        <AmazonStoreManagement />
+
+      ) : window.location.pathname === "/walmart-marketplace-management" ? (
+        <WalmartMarketplaceManagement />
+
+      ) : window.location.pathname === "/tiktok-shop-management" ? (
+        <TikTokShopManagement />
+
+      ) : window.location.pathname === "/shopify-store-development" ? (
+        <ShopifyStoreDevelopment />
+
+      ) : window.location.pathname === "/woocommerce-development" ? (
+        <WooCommerceDevelopment />
+
       ) : window.location.pathname === "/project-form" ? (
         <ProjectForm />
+
       ) : window.location.pathname === "/experience-journey" ? (
         <ExperienceJourney />
+
       ) : window.location.pathname === "/international-clients" ? (
         <InternationalClients />
+
       ) : window.location.pathname === "/multi-channel-expertise" ? (
         <MultiChannelExpertise />
+
       ) : window.location.pathname === "/wordpress-store-dev" ? (
         <WordpressStoreDev />
+
       ) : (
         <div className="App">
           <Navigation />
