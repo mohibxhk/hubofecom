@@ -78,7 +78,7 @@ export default function Navigation() {
 </button>
 
         {/* DESKTOP MENU */}
-        <ul className="hidden md:flex items-center gap-2">
+        <ul className="hidden lg:flex items-center gap-2">
           {links.map((l) => (
             <li key={l.id}>
               <button
@@ -105,7 +105,7 @@ export default function Navigation() {
 
         {/* MOBILE TOGGLE */}
         <button
-          className="md:hidden text-white"
+          className="lg:hidden text-white"
           onClick={() => setOpen(!open)}
         >
           {open ? <X size={28} /> : <Menu size={28} />}
