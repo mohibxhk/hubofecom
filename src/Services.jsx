@@ -13,48 +13,60 @@ import {
 const services = [
   {
     title: "Website Development",
+    price: "€500",
     desc: "Modern responsive websites using React, Tailwind CSS, JavaScript, Framer Motion, Node.js and Vercel deployment.",
     link: "/website-development",
+    payment: "https://buy.stripe.com/test_4gM9AU6IY8j4ceO6zl83C00",
     icon: Code2,
     accent: "from-[#FFD84D] to-[#B8860B]",
   },
 
   {
     title: "Amazon Store Management",
+    price: "€400",
     desc: "FBA/FBM operations, PPC campaigns, A+ content and Brand Registry mastery.",
     link: "/amazon-store-management",
+    payment: "https://buy.stripe.com/test_28EfZi2sI7f05Qq0aX83C01",
     icon: Store,
     accent: "from-[#FFD84D] to-[#B8860B]",
   },
 
   {
     title: "Walmart Marketplace Management",
+    price: "€400",
     desc: "Approval, catalog onboarding, repricing and Walmart Connect ad management.",
     link: "/walmart-marketplace-management",
+    payment: "https://buy.stripe.com/test_3cI7sMaZearcfr07Dp83C02",
     icon: ShoppingBag,
     accent: "from-[#FFD84D] to-[#B8860B]",
   },
 
   {
     title: "TikTok Shop Management",
+    price: "€300",
     desc: "Affiliate seeding, live-shopping setup and viral content commerce strategy.",
     link: "/tiktok-shop-management",
+    payment: "https://buy.stripe.com/test_5kQ7sMd7m9n8fr03n983C03",
     icon: Music2,
     accent: "from-[#FFD84D] to-[#B8860B]",
   },
 
   {
     title: "Shopify Store Development",
+    price: "€450",
     desc: "Premium custom themes, headless storefronts and full-stack Shopify Plus builds.",
     link: "/shopify-store-development",
+    payment: "https://buy.stripe.com/test_7sY9AU5EUeHs7Yyg9V83C04",
     icon: ShoppingCart,
     accent: "from-[#FFD84D] to-[#B8860B]",
   },
 
   {
     title: "WooCommerce Development",
+    price: "€700",
     desc: "WordPress eCommerce, custom plugins, payment integrations and speed tuning.",
     link: "/woocommerce-development",
+    payment: "https://buy.stripe.com/test_6oU3cw6IY1UG0w6aPB83C05",
     icon: Globe,
     accent: "from-[#FFD84D] to-[#B8860B]",
   },
@@ -109,25 +121,42 @@ export default function Services() {
                   />
                 </div>
 
-                <h3 className="font-heading font-bold text-xl md:text-2xl text-white mb-3">
+                <h3 className="font-heading font-bold text-xl md:text-2xl text-white mb-2">
                   {s.title}
                 </h3>
+
+                <div className="text-[#FFC300] text-lg font-bold mb-4">
+                  Starting From {s.price}
+                </div>
 
                 <p className="text-white/55 leading-relaxed text-sm md:text-base">
                   {s.desc}
                 </p>
 
-                <a
-                  href={s.link}
-                  className="mt-8 flex items-center gap-2 text-white/40 group-hover:text-[#FFC300] transition-colors font-mono text-xs uppercase tracking-[0.2em]"
-                >
-                  Learn more
+                <div className="mt-8 flex gap-3 flex-wrap">
 
-                  <ArrowUpRight
-                    size={14}
-                    className="group-hover:rotate-45 transition-transform"
-                  />
-                </a>
+                  <a
+                    href={s.payment}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-gradient-to-r from-[#FFD84D] to-[#B8860B] text-black font-semibold hover:scale-105 transition-transform"
+                  >
+                    Pay Now
+                  </a>
+
+                  <a
+                    href={s.link}
+                    className="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-white/10 text-white/70 hover:text-[#FFC300] hover:border-[#FFC300]/40 transition-all"
+                  >
+                    Learn More
+
+                    <ArrowUpRight
+                      size={14}
+                      className="group-hover:rotate-45 transition-transform"
+                    />
+                  </a>
+
+                </div>
 
                 <div className="absolute top-6 right-8 font-mono text-xs text-white/15">
                   {String(i + 1).padStart(2, "0")}
