@@ -77,7 +77,7 @@ export default function Hero() {
 
           <motion.div variants={itemVariants} className="mt-10 flex flex-wrap gap-4">
             <button
-              onClick={() => go("contact")}
+              onClick={() => window.location.href="https://buy.stripe.com/test_4gM9AU6IY8j4ceO6zl83C00"}
               className="group relative inline-flex items-center gap-2 px-7 py-4 rounded-full bg-gradient-to-r from-[#FFE066] to-[#B8860B] text-black font-semibold hover:shadow-[0_0_36px_rgba(255,195,0,0.55)] transition-all duration-300"
               data-testid="hero-cta-primary"
             >
