@@ -1,7 +1,8 @@
+import { Menu, X } from "lucide-react";
+import { loadStripe } from "@stripe/stripe-js";
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
-
+const stripePromise = loadStripe("pk_test_51TYZmXK7mEPtfTf3uY1UIqHfXIzuiUPcOvKMAkadpEe71W9Q6OtkunFDDsReyIOA5W3cbsTOnnL9q1iP7jLcSLAC00qBThRv2a");
 const links = [
   { id: "home", label: "Home" },
   { id: "about", label: "About" },
