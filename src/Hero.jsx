@@ -70,9 +70,7 @@ export default function Hero() {
             variants={itemVariants}
             className="mt-6 max-w-xl text-base md:text-lg text-white/60 leading-relaxed"
           >
-            Hubofecom helps ambitious businesses grow on global marketplaces — Amazon,
-            eBay, Walmart, TikTok Shop — and build profitable Shopify & WooCommerce stores
-            across USA, UK, AUS & CA.
+            We build premium websites using reach, CSS Tailwind, Modern Frame, node.js, Java Script and scale eCommerce brands through Shopify, WooCommerce, Amazon, eBay, Walmart & TikTok Shop with modern UI/UX, development and growth strategies worldwide.
           </motion.p>
 
           <motion.div variants={itemVariants} className="mt-10 flex flex-wrap gap-4">
