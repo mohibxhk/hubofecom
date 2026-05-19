@@ -65,7 +65,7 @@ export default function WooCommerceDevelopment() {
               // WooCommerce Development
             </p>
 
-            <h1 className="text-6xl md:text-8xl font-black leading-none">
+            <h1 className="text-[46px] sm:text-6xl md:text-8xl font-black leading-[0.9] break-words max-w-[95%]">
               Advanced
               <br />
               <span className="text-[#FFC300]">
