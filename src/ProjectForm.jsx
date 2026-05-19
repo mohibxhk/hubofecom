@@ -6,6 +6,158 @@ export default function ProjectForm() {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
 
+  const params = new URLSearchParams(window.location.search);
+  const service = params.get("service");
+
+  const serviceQuestions = {
+    website: {
+      title: "Website Development Project",
+      questions: (
+        <>
+          <select
+            name="website_type"
+            className="w-full bg-[#111] border border-white/10 rounded-2xl px-6 py-5"
+          >
+            <option>What type of website do you need?</option>
+            <option>eCommerce Website</option>
+            <option>Portfolio Website</option>
+            <option>Business Website</option>
+            <option>Booking Website</option>
+          </select>
+
+          <select
+            name="technology"
+            className="w-full bg-[#111] border border-white/10 rounded-2xl px-6 py-5"
+          >
+            <option>Preferred Technology</option>
+            <option>React.js</option>
+            <option>Shopify</option>
+            <option>WooCommerce</option>
+            <option>WordPress</option>
+          </select>
+        </>
+      ),
+    },
+
+    amazon: {
+      title: "Amazon Store Management",
+      questions: (
+        <>
+          <select
+            name="amazon_model"
+            className="w-full bg-[#111] border border-white/10 rounded-2xl px-6 py-5"
+          >
+            <option>FBA or FBM?</option>
+            <option>FBA</option>
+            <option>FBM</option>
+            <option>Both</option>
+          </select>
+
+          <input
+            type="text"
+            name="products"
+            placeholder="How many products do you have?"
+            className="w-full bg-[#111] border border-white/10 rounded-2xl px-6 py-5"
+          />
+        </>
+      ),
+    },
+
+    shopify: {
+      title: "Shopify Store Development",
+      questions: (
+        <>
+          <input
+            type="text"
+            name="products"
+            placeholder="Number of products"
+            className="w-full bg-[#111] border border-white/10 rounded-2xl px-6 py-5"
+          />
+
+          <select
+            name="theme"
+            className="w-full bg-[#111] border border-white/10 rounded-2xl px-6 py-5"
+          >
+            <option>Need custom design?</option>
+            <option>Yes</option>
+            <option>No</option>
+          </select>
+        </>
+      ),
+    },
+
+    walmart: {
+      title: "Walmart Marketplace Management",
+      questions: (
+        <>
+          <input
+            type="text"
+            name="skus"
+            placeholder="Number of SKUs"
+            className="w-full bg-[#111] border border-white/10 rounded-2xl px-6 py-5"
+          />
+
+          <select
+            name="ads"
+            className="w-full bg-[#111] border border-white/10 rounded-2xl px-6 py-5"
+          >
+            <option>Need Walmart Ads?</option>
+            <option>Yes</option>
+            <option>No</option>
+          </select>
+        </>
+      ),
+    },
+
+    tiktok: {
+      title: "TikTok Shop Management",
+      questions: (
+        <>
+          <input
+            type="text"
+            name="followers"
+            placeholder="Current followers count"
+            className="w-full bg-[#111] border border-white/10 rounded-2xl px-6 py-5"
+          />
+
+          <select
+            name="affiliate"
+            className="w-full bg-[#111] border border-white/10 rounded-2xl px-6 py-5"
+          >
+            <option>Need affiliate marketing?</option>
+            <option>Yes</option>
+            <option>No</option>
+          </select>
+        </>
+      ),
+    },
+
+    woocommerce: {
+      title: "WooCommerce Development",
+      questions: (
+        <>
+          <select
+            name="wordpress"
+            className="w-full bg-[#111] border border-white/10 rounded-2xl px-6 py-5"
+          >
+            <option>Existing WordPress website?</option>
+            <option>Yes</option>
+            <option>No</option>
+          </select>
+
+          <input
+            type="text"
+            name="plugins"
+            placeholder="Required plugins/features"
+            className="w-full bg-[#111] border border-white/10 rounded-2xl px-6 py-5"
+          />
+        </>
+      ),
+    },
+  };
+
+  const currentService = serviceQuestions[service] || serviceQuestions.website;
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -43,27 +195,15 @@ export default function ProjectForm() {
   return (
     <div className="min-h-screen bg-black text-white px-6 md:px-16 py-20">
 
-      <motion.div
-        initial={{ opacity: 0, y: 80 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-        className="max-w-4xl mx-auto"
-      >
+      <div className="max-w-4xl mx-auto">
 
         <p className="uppercase tracking-[0.4em] text-[#FFC300] text-sm mb-4">
           // Client Project Form
         </p>
 
         <h1 className="text-5xl md:text-7xl font-black leading-tight">
-          Let’s Build
-          <br />
-          Your Dream Website
+          {currentService.title}
         </h1>
-
-        <p className="mt-6 text-white/60 text-lg max-w-2xl">
-          Fill out the details below so we can understand your project,
-          business goals and design vision.
-        </p>
 
         {success && (
           <div className="mt-8 bg-green-500/10 border border-green-500 text-green-400 px-6 py-4 rounded-2xl">
@@ -83,7 +223,7 @@ export default function ProjectForm() {
               name="name"
               required
               placeholder="Your Name"
-              className="bg-[#111] border border-white/10 rounded-2xl px-6 py-5 outline-none focus:border-[#FFC300]"
+              className="bg-[#111] border border-white/10 rounded-2xl px-6 py-5"
             />
 
             <input
@@ -91,7 +231,7 @@ export default function ProjectForm() {
               name="email"
               required
               placeholder="Business Email"
-              className="bg-[#111] border border-white/10 rounded-2xl px-6 py-5 outline-none focus:border-[#FFC300]"
+              className="bg-[#111] border border-white/10 rounded-2xl px-6 py-5"
             />
 
           </div>
@@ -100,86 +240,31 @@ export default function ProjectForm() {
             type="text"
             name="brand"
             placeholder="Business / Brand Name"
-            className="w-full bg-[#111] border border-white/10 rounded-2xl px-6 py-5 outline-none focus:border-[#FFC300]"
+            className="w-full bg-[#111] border border-white/10 rounded-2xl px-6 py-5"
           />
 
-          <select
-            name="website_type"
-            className="w-full bg-[#111] border border-white/10 rounded-2xl px-6 py-5 outline-none focus:border-[#FFC300]"
-          >
-            <option>What type of website do you need?</option>
-            <option>eCommerce Website</option>
-            <option>Portfolio Website</option>
-            <option>Business Website</option>
-            <option>Booking Website</option>
-            <option>Custom Web App</option>
-          </select>
-
-          <select
-            name="technology"
-            className="w-full bg-[#111] border border-white/10 rounded-2xl px-6 py-5 outline-none focus:border-[#FFC300]"
-          >
-            <option>Preferred Technology</option>
-            <option>React.js</option>
-            <option>Shopify</option>
-            <option>WooCommerce</option>
-            <option>WordPress</option>
-            <option>I need recommendation</option>
-          </select>
+          {currentService.questions}
 
           <textarea
             name="project_details"
             rows="5"
-            placeholder="Describe your project and required features..."
-            className="w-full bg-[#111] border border-white/10 rounded-2xl px-6 py-5 outline-none focus:border-[#FFC300]"
+            placeholder="Describe your project..."
+            className="w-full bg-[#111] border border-white/10 rounded-2xl px-6 py-5"
           />
-
-          <textarea
-            name="references"
-            rows="3"
-            placeholder="Reference websites you like..."
-            className="w-full bg-[#111] border border-white/10 rounded-2xl px-6 py-5 outline-none focus:border-[#FFC300]"
-          />
-
-          <div className="grid md:grid-cols-2 gap-6">
-
-            <select
-              name="budget"
-              className="bg-[#111] border border-white/10 rounded-2xl px-6 py-5 outline-none focus:border-[#FFC300]"
-            >
-              <option>Project Budget</option>
-              <option>$500 - $1000</option>
-              <option>$1000 - $3000</option>
-              <option>$3000 - $10000</option>
-              <option>$10000+</option>
-            </select>
-
-            <select
-              name="timeline"
-              className="bg-[#111] border border-white/10 rounded-2xl px-6 py-5 outline-none focus:border-[#FFC300]"
-            >
-              <option>Timeline</option>
-              <option>1 Week</option>
-              <option>2-4 Weeks</option>
-              <option>1-2 Months</option>
-              <option>Flexible</option>
-            </select>
-
-          </div>
 
           <motion.button
             type="submit"
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.96 }}
             disabled={loading}
-            className="mt-4 px-10 py-5 rounded-full bg-[#FFC300] text-black font-bold text-lg shadow-[0_0_40px_rgba(255,195,0,0.35)]"
+            className="mt-4 px-10 py-5 rounded-full bg-[#FFC300] text-black font-bold text-lg"
           >
             {loading ? "Submitting..." : "Submit Project Request"}
           </motion.button>
 
         </form>
 
-      </motion.div>
+      </div>
 
     </div>
   );
