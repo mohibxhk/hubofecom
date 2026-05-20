@@ -1,3 +1,4 @@
+import ContactPopup from "./ContactPopup";
 import WordpressStoreDev from "./WordpressStoreDev";
 import MultiChannelExpertise from "./MultiChannelExpertise";
 import ProjectForm from "./ProjectForm";
