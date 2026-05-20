@@ -61,6 +61,7 @@ function App() {
 
       ) : (
         <div className="App">
+          <ContactPopup />
           <Navigation />
           <Hero />
           <About />
