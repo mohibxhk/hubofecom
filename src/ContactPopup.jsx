@@ -44,7 +44,7 @@ export default function ContactPopup() {
               </div>
 
               <p className="uppercase tracking-[0.3em] text-[#FFC300] text-xs mb-4">
-                // Contact First
+                Contact First
               </p>
 
               <h2 className="text-3xl font-black text-white leading-tight">
