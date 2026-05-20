@@ -60,7 +60,7 @@ export default function ContactPopup() {
               <div className="mt-8 flex flex-col gap-4">
                 
                 <a
-                  href="https://wa.me/923000000000"
+                  href="https://wa.me/393500794831"
                   target="_blank"
                   rel="noreferrer"
                   className="flex items-center justify-center gap-3 rounded-2xl bg-[#FFC300] text-black font-bold py-4 hover:scale-[1.02] transition-transform"
@@ -70,7 +70,7 @@ export default function ContactPopup() {
                 </a>
 
                 <a
-                  href="https://instagram.com/hubofecom"
+                  href="https://www.instagram.com/hubofecom/"
                   target="_blank"
                   rel="noreferrer"
                   className="flex items-center justify-center gap-3 rounded-2xl border border-white/10 text-white py-4 hover:border-[#FFC300]/40 hover:text-[#FFC300] transition-all"
