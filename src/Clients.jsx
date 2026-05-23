@@ -18,10 +18,10 @@ const clientLogos = [
 
 const testimonials = [
   {
-    name: "Sarah Mitchell",
-    role: "Founder · Aurora Home (USA)",
+    name: "Abdel Amiche",
+    role: "Founder · ProximEcom)",
     quote:
-      "Hubofecom rebuilt our Amazon storefront and re-launched us on Walmart. Revenue is up 4× in 9 months — they truly run marketplaces like a science.",
+      "Hub of Ecom delivered an elegant premium website exactly how we envisioned it. The UI feels luxurious, smooth, and professional. Their communication and execution were excellent throughout the project.",
     rating: 5,
   },
   {
