@@ -1,3 +1,4 @@
+import abdelReal from "./assets/abdel-real.jpg";
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Marquee from "react-fast-marquee";
@@ -23,6 +24,7 @@ const testimonials = [
     quote:
       "Hub of Ecom delivered an elegant premium website exactly how we envisioned it. The UI feels luxurious, smooth, and professional. Their communication and execution were excellent throughout the project.",
     rating: 5,
+    image: abdelReal,
   },
   {
     name: "James Okafor",
