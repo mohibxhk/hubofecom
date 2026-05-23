@@ -20,7 +20,7 @@ const clientLogos = [
 const testimonials = [
   {
     name: "Abdel Amiche",
-    role: "Founder · ProximEcom)",
+    role: "Founder · ProximEcom",
     quote:
       "Hub of Ecom delivered an elegant premium website exactly how we envisioned it. The UI feels luxurious, smooth, and professional. Their communication and execution were excellent throughout the project.",
     rating: 5,
@@ -56,6 +56,7 @@ export default function Clients() {
     const t = setInterval(() => {
       setActive((a) => (a + 1) % testimonials.length);
     }, 6000);
+
     return () => clearInterval(t);
   }, []);
 
@@ -76,10 +77,13 @@ export default function Clients() {
           <p className="font-mono text-xs uppercase tracking-[0.3em] text-[#FFC300] mb-4">
             // 04 — Trusted globally
           </p>
+
           <h2 className="font-heading font-black text-4xl md:text-5xl lg:text-6xl tracking-tighter text-white">
             Brands selling on every
             <br />
-            <span className="text-gradient-red-yellow">marketplace that matters.</span>
+            <span className="text-gradient-red-yellow">
+              marketplace that matters.
+            </span>
           </h2>
         </motion.div>
 
@@ -119,21 +123,41 @@ export default function Clients() {
                 data-testid={`testimonial-${active}`}
               >
                 <div className="flex items-center gap-1 mb-6">
-                  {Array.from({ length: testimonials[active].rating }).map((_, i) => (
-                    <Star key={i} size={18} className="fill-[#FFC300] text-[#FFC300]" />
+                  {Array.from({
+                    length: testimonials[active].rating,
+                  }).map((_, i) => (
+                    <Star
+                      key={i}
+                      size={18}
+                      className="fill-[#FFC300] text-[#FFC300]"
+                    />
                   ))}
                 </div>
+
                 <blockquote className="font-heading font-light text-2xl md:text-3xl lg:text-4xl tracking-tight text-white leading-tight">
                   "{testimonials[active].quote}"
                 </blockquote>
+
                 <div className="mt-8 flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#FFE066] to-[#B8860B] flex items-center justify-center text-black font-heading font-black text-lg">
-                    {testimonials[active].name[0]}
+                  <div className="w-14 h-14 rounded-full overflow-hidden">
+                    {testimonials[active].image ? (
+                      <img
+                        src={testimonials[active].image}
+                        alt={testimonials[active].name}
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <div className="w-full h-full bg-gradient-to-br from-[#FFE066] to-[#B8860B] flex items-center justify-center text-black font-heading font-black text-lg">
+                        {testimonials[active].name[0]}
+                      </div>
+                    )}
                   </div>
+
                   <div>
                     <div className="font-heading font-bold text-white">
                       {testimonials[active].name}
                     </div>
+
                     <div className="text-sm text-white/50">
                       {testimonials[active].role}
                     </div>
@@ -159,10 +183,13 @@ export default function Clients() {
                   />
                 ))}
               </div>
+
               <div className="flex gap-2">
                 <button
                   onClick={() =>
-                    setActive((a) => (a - 1 + testimonials.length) % testimonials.length)
+                    setActive(
+                      (a) => (a - 1 + testimonials.length) % testimonials.length
+                    )
                   }
                   className="w-11 h-11 rounded-full border border-white/10 flex items-center justify-center text-white/70 hover:text-[#FFC300] hover:border-[#FFC300]/40 transition-colors"
                   data-testid="testimonial-prev"
@@ -170,8 +197,11 @@ export default function Clients() {
                 >
                   <ChevronLeft size={18} />
                 </button>
+
                 <button
-                  onClick={() => setActive((a) => (a + 1) % testimonials.length)}
+                  onClick={() =>
+                    setActive((a) => (a + 1) % testimonials.length)
+                  }
                   className="w-11 h-11 rounded-full border border-white/10 flex items-center justify-center text-white/70 hover:text-[#FFC300] hover:border-[#FFC300]/40 transition-colors"
                   data-testid="testimonial-next"
                   aria-label="Next"
