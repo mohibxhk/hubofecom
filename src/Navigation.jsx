@@ -2,8 +2,7 @@ import { Menu, X } from "lucide-react";
 import { loadStripe } from "@stripe/stripe-js";
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { Link, useNavigate } from "react-router-dom";
 
 const stripePromise = loadStripe("pk_test_51TYZmXK7mEPtfTf3uY1UIqHfXIzuiUPcOvKMAkadpEe71W9Q6OtkunFDDsReyIOA5W3cbsTOnnL9q1iP7jLcSLAC00qBThRv2a");
 
@@ -20,7 +19,7 @@ const links = [
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const router = useRouter();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const onScroll = () => {
@@ -40,12 +39,18 @@ export default function Navigation() {
     const path = typeof link === "object" ? link.path : null;
 
     if (isRoute && path) {
-      router.push(path);
+      navigate(path);
       return;
     }
 
     if (window.location.pathname !== "/") {
-      router.push(`/#${id}`);
+      navigate("/");
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 300);
       return;
     }
 
@@ -76,7 +81,7 @@ export default function Navigation() {
 
         {/* LOGO */}
         <Link
-          href="/"
+          to="/"
           className="flex items-center gap-4"
         >
           <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-[#FFD84D] to-[#B8860B] shadow-[0_0_30px_rgba(255,195,0,0.35)]">
@@ -97,7 +102,7 @@ export default function Navigation() {
             l.isRoute ? (
               <Link
                 key={l.id}
-                href={l.path}
+                to={l.path}
                 className="text-white/80 hover:text-[#FFC300] transition"
               >
                 {l.label}
@@ -144,7 +149,7 @@ export default function Navigation() {
                 <li key={l.id}>
                   {l.isRoute ? (
                     <Link
-                      href={l.path}
+                      to={l.path}
                       onClick={() => setOpen(false)}
                       className="w-full block text-left text-white/80 hover:text-[#FFC300] transition-colors text-lg font-medium"
                     >
