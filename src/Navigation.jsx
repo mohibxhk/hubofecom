@@ -2,11 +2,14 @@ import { Menu, X } from "lucide-react";
 import { loadStripe } from "@stripe/stripe-js";
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+
 const stripePromise = loadStripe("pk_test_51TYZmXK7mEPtfTf3uY1UIqHfXIzuiUPcOvKMAkadpEe71W9Q6OtkunFDDsReyIOA5W3cbsTOnnL9q1iP7jLcSLAC00qBThRv2a");
+
 const links = [
   { id: "home", label: "Home" },
   { id: "about", label: "About" },
   { id: "services", label: "Services" },
+  { id: "projects", label: "Projects", isRoute: true, path: "/projects" },
   { id: "experience", label: "Experience" },
   { id: "clients", label: "Clients" },
   { id: "contact", label: "Contact" },
@@ -26,8 +29,18 @@ export default function Navigation() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const go = (id) => {
+  const go = (link) => {
     setOpen(false);
+
+    // Dynamic handling for objects or string IDs
+    const id = typeof link === "object" ? link.id : link;
+    const isRoute = typeof link === "object" ? link.isRoute : false;
+    const path = typeof link === "object" ? link.path : null;
+
+    if (isRoute && path) {
+      window.location.href = path;
+      return;
+    }
 
     if (window.location.pathname !== "/") {
       window.location.href = `/#${id}`;
@@ -83,7 +96,7 @@ export default function Navigation() {
           {links.map((l) => (
             <button
               key={l.id}
-              onClick={() => go(l.id)}
+              onClick={() => go(l)}
               className="text-white/80 hover:text-[#FFC300] transition"
             >
               {l.label}
@@ -120,7 +133,7 @@ export default function Navigation() {
               {links.map((l) => (
                 <li key={l.id}>
                   <button
-                    onClick={() => go(l.id)}
+                    onClick={() => go(l)}
                     className="w-full text-left text-white/80 hover:text-[#FFC300] transition-colors text-lg font-medium"
                   >
                     {l.label}
