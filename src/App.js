@@ -1,3 +1,6 @@
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import ContactPopup from "./ContactPopup";
 import WordpressStoreDev from "./WordpressStoreDev";
 import MultiChannelExpertise from "./MultiChannelExpertise";
@@ -10,7 +13,6 @@ import WalmartMarketplaceManagement from "./WalmartMarketplaceManagement";
 import TikTokShopManagement from "./TikTokShopManagement";
 import ShopifyStoreDevelopment from "./ShopifyStoreDevelopment";
 import WooCommerceDevelopment from "./WooCommerceDevelopment";
-import Projects from "./Projects"; // Projects page import
 
 import "./App.css";
 
@@ -23,60 +25,44 @@ import Clients from "./Clients";
 import Contact from "./Contact";
 import Footer from "./Footer";
 import WebsiteDevelopment from "./WebsiteDevelopment";
+import Projects from "./Projects";
+
+// Main Landing Page Component
+function HomePage() {
+  return (
+    <div className="App">
+      <ContactPopup />
+      <Navigation />
+      <Hero />
+      <About />
+      <Services />
+      <Experience />
+      <Clients />
+      <Contact />
+      <Footer />
+    </div>
+  );
+}
 
 function App() {
   return (
-    <>
-      {window.location.pathname === "/projects" ? (
-        <Projects />
-
-      ) : window.location.pathname === "/website-development" ? (
-        <WebsiteDevelopment />
-
-      ) : window.location.pathname === "/amazon-store-management" ? (
-        <AmazonStoreManagement />
-
-      ) : window.location.pathname === "/walmart-marketplace-management" ? (
-        <WalmartMarketplaceManagement />
-
-      ) : window.location.pathname === "/tiktok-shop-management" ? (
-        <TikTokShopManagement />
-
-      ) : window.location.pathname === "/shopify-store-development" ? (
-        <ShopifyStoreDevelopment />
-
-      ) : window.location.pathname === "/woocommerce-development" ? (
-        <WooCommerceDevelopment />
-
-      ) : window.location.pathname === "/project-form" ? (
-        <ProjectForm />
-
-      ) : window.location.pathname === "/experience-journey" ? (
-        <ExperienceJourney />
-
-      ) : window.location.pathname === "/international-clients" ? (
-        <InternationalClients />
-
-      ) : window.location.pathname === "/multi-channel-expertise" ? (
-        <MultiChannelExpertise />
-
-      ) : window.location.pathname === "/wordpress-store-dev" ? (
-        <WordpressStoreDev />
-
-      ) : (
-        <div className="App">
-          <ContactPopup />
-          <Navigation />
-          <Hero />
-          <About />
-          <Services />
-          <Experience />
-          <Clients />
-          <Contact />
-          <Footer />
-        </div>
-      )}
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/website-development" element={<WebsiteDevelopment />} />
+        <Route path="/amazon-store-management" element={<AmazonStoreManagement />} />
+        <Route path="/walmart-marketplace-management" element={<WalmartMarketplaceManagement />} />
+        <Route path="/tiktok-shop-management" element={<TikTokShopManagement />} />
+        <Route path="/shopify-store-development" element={<ShopifyStoreDevelopment />} />
+        <Route path="/woocommerce-development" element={<WooCommerceDevelopment />} />
+        <Route path="/project-form" element={<ProjectForm />} />
+        <Route path="/experience-journey" element={<ExperienceJourney />} />
+        <Route path="/international-clients" element={<InternationalClients />} />
+        <Route path="/multi-channel-expertise" element={<MultiChannelExpertise />} />
+        <Route path="/wordpress-store-dev" element={<WordpressStoreDev />} />
+      </Routes>
+    </Router>
   );
 }
 
