@@ -2,6 +2,8 @@ import { Menu, X } from "lucide-react";
 import { loadStripe } from "@stripe/stripe-js";
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const stripePromise = loadStripe("pk_test_51TYZmXK7mEPtfTf3uY1UIqHfXIzuiUPcOvKMAkadpEe71W9Q6OtkunFDDsReyIOA5W3cbsTOnnL9q1iP7jLcSLAC00qBThRv2a");
 
@@ -18,6 +20,7 @@ const links = [
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     const onScroll = () => {
@@ -32,18 +35,17 @@ export default function Navigation() {
   const go = (link) => {
     setOpen(false);
 
-    // Dynamic handling for objects or string IDs
     const id = typeof link === "object" ? link.id : link;
     const isRoute = typeof link === "object" ? link.isRoute : false;
     const path = typeof link === "object" ? link.path : null;
 
     if (isRoute && path) {
-      window.location.href = path;
+      router.push(path);
       return;
     }
 
     if (window.location.pathname !== "/") {
-      window.location.href = `/#${id}`;
+      router.push(`/#${id}`);
       return;
     }
 
@@ -73,10 +75,8 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-6 md:px-12 h-20 flex items-center justify-between">
 
         {/* LOGO */}
-        <button
-          onClick={() => {
-            window.location.href = "/";
-          }}
+        <Link
+          href="/"
           className="flex items-center gap-4"
         >
           <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-[#FFD84D] to-[#B8860B] shadow-[0_0_30px_rgba(255,195,0,0.35)]">
@@ -89,18 +89,28 @@ export default function Navigation() {
             Hubofecom
             <span className="text-[#FFC300]">.</span>
           </span>
-        </button>
+        </Link>
 
         {/* DESKTOP MENU */}
         <div className="hidden lg:flex items-center gap-10 ml-auto">
           {links.map((l) => (
-            <button
-              key={l.id}
-              onClick={() => go(l)}
-              className="text-white/80 hover:text-[#FFC300] transition"
-            >
-              {l.label}
-            </button>
+            l.isRoute ? (
+              <Link
+                key={l.id}
+                href={l.path}
+                className="text-white/80 hover:text-[#FFC300] transition"
+              >
+                {l.label}
+              </Link>
+            ) : (
+              <button
+                key={l.id}
+                onClick={() => go(l)}
+                className="text-white/80 hover:text-[#FFC300] transition"
+              >
+                {l.label}
+              </button>
+            )
           ))}
 
           <button
@@ -132,12 +142,22 @@ export default function Navigation() {
             <ul className="px-6 py-6 space-y-4">
               {links.map((l) => (
                 <li key={l.id}>
-                  <button
-                    onClick={() => go(l)}
-                    className="w-full text-left text-white/80 hover:text-[#FFC300] transition-colors text-lg font-medium"
-                  >
-                    {l.label}
-                  </button>
+                  {l.isRoute ? (
+                    <Link
+                      href={l.path}
+                      onClick={() => setOpen(false)}
+                      className="w-full block text-left text-white/80 hover:text-[#FFC300] transition-colors text-lg font-medium"
+                    >
+                      {l.label}
+                    </Link>
+                  ) : (
+                    <button
+                      onClick={() => go(l)}
+                      className="w-full text-left text-white/80 hover:text-[#FFC300] transition-colors text-lg font-medium"
+                    >
+                      {l.label}
+                    </button>
+                  )}
                 </li>
               ))}
 
