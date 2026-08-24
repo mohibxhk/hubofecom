@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { ExternalLink, ArrowUpRight, Sparkles, Filter, CheckCircle2, TrendingUp } from "lucide-react";
-import Navigation from "../Navigation"; // Path aap ke project folder ke mutabiq adjust kar lein
+import { ExternalLink, ArrowUpRight, Sparkles, CheckCircle2, TrendingUp } from "lucide-react";
+import Navigation from "./Navigation"; // Path fixed (same folder)
 
-// Sample Projects Data - Inko aap apne real projects aur image links se replace kar sakte hain
 const projectsData = [
   {
     id: 1,
@@ -87,10 +86,8 @@ export default function Projects() {
 
   return (
     <div className="min-h-screen bg-[#050816] text-white selection:bg-[#FFC300] selection:text-black">
-      {/* Navigation Bar Header */}
       <Navigation />
 
-      {/* Main Container */}
       <main className="pt-32 pb-24 px-6 md:px-12 max-w-7xl mx-auto">
         
         {/* HERO SECTION */}
@@ -148,7 +145,7 @@ export default function Projects() {
           ))}
         </motion.div>
 
-        {/* FEATURED CASE STUDY (Only on 'All' tab) */}
+        {/* FEATURED CASE STUDY */}
         {activeCategory === "All" && featuredProject && (
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -217,7 +214,6 @@ export default function Projects() {
               className="group bg-[#0b1026] border border-[#1E3A8A]/30 rounded-3xl overflow-hidden hover:border-[#FFC300]/60 transition-all duration-300 flex flex-col justify-between hover:shadow-[0_10px_30px_rgba(0,80,255,0.2)]"
             >
               <div>
-                {/* Image */}
                 <div className="relative h-56 overflow-hidden bg-[#131b3e]">
                   <img
                     src={project.image}
@@ -229,7 +225,6 @@ export default function Projects() {
                   </div>
                 </div>
 
-                {/* Content */}
                 <div className="p-6 space-y-4">
                   <h3 className="text-2xl font-bold text-white group-hover:text-[#FFC300] transition-colors">
                     {project.title}
@@ -251,7 +246,6 @@ export default function Projects() {
                 </div>
               </div>
 
-              {/* Footer / Link */}
               <div className="p-6 pt-0 mt-4 border-t border-[#1E3A8A]/20 flex items-center justify-between">
                 <span className="text-xs font-bold text-[#FFC300] flex items-center gap-1">
                   <CheckCircle2 className="w-3.5 h-3.5" /> {project.stats}
