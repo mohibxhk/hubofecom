@@ -10,6 +10,7 @@ import WalmartMarketplaceManagement from "./WalmartMarketplaceManagement";
 import TikTokShopManagement from "./TikTokShopManagement";
 import ShopifyStoreDevelopment from "./ShopifyStoreDevelopment";
 import WooCommerceDevelopment from "./WooCommerceDevelopment";
+import Projects from "./Projects"; // Projects page import
 
 import "./App.css";
 
@@ -26,7 +27,10 @@ import WebsiteDevelopment from "./WebsiteDevelopment";
 function App() {
   return (
     <>
-      {window.location.pathname === "/website-development" ? (
+      {window.location.pathname === "/projects" ? (
+        <Projects />
+
+      ) : window.location.pathname === "/website-development" ? (
         <WebsiteDevelopment />
 
       ) : window.location.pathname === "/amazon-store-management" ? (
