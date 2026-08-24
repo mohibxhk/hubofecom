@@ -1,28 +1,28 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { ExternalLink, ArrowUpRight, Sparkles, CheckCircle2, TrendingUp } from "lucide-react";
-import Navigation from "./Navigation"; // Path fixed (same folder)
+import Navigation from "./Navigation";
 
 const projectsData = [
   {
     id: 1,
+    title: "Canada Premium Home Cleaning Service",
+    category: "Custom React",
+    description: "High-converting booking platform & lead engine designed for a top-rated home cleaning service in Canada. Features instant quote estimator, online schedule booking, and automated local SEO funnels.",
+    image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=1200&auto=format&fit=crop",
+    tags: ["React", "Tailwind CSS", "Online Booking", "Canada Local SEO"],
+    stats: "+210% Monthly Bookings",
+    link: "https://example.com",
+    featured: true,
+  },
+  {
+    id: 2,
     title: "Aura Luxury E-Commerce",
     category: "Shopify",
     description: "High-converting luxury fashion & lifestyle store build with custom Liquid sections, instant search, and headless performance.",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop",
     tags: ["Shopify Plus", "Liquid", "Tailwind CSS", "CRO"],
     stats: "+145% Revenue Growth",
-    link: "https://example.com",
-    featured: true,
-  },
-  {
-    id: 2,
-    title: "Luxe Living Interiors",
-    category: "Custom React",
-    description: "Custom landscape & architecture booking platform built with Next.js/React, interactive 3D view, and real-time appointment system.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop",
-    tags: ["React", "Tailwind CSS", "Framer Motion", "Node.js"],
-    stats: "3.2x Conversion Rate",
     link: "https://example.com",
     featured: false,
   },
@@ -85,7 +85,7 @@ export default function Projects() {
   const featuredProject = projectsData.find((p) => p.featured);
 
   return (
-    <div className="min-h-screen bg-[#050816] text-white selection:bg-[#FFC300] selection:text-black">
+    <div className="min-h-screen bg-black text-white selection:bg-[#FFC300] selection:text-black">
       <Navigation />
 
       <main className="pt-32 pb-24 px-6 md:px-12 max-w-7xl mx-auto">
@@ -96,7 +96,7 @@ export default function Projects() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1E3A8A]/20 border border-[#FFC300]/30 text-[#FFC300] text-xs font-semibold uppercase tracking-wider shadow-[0_0_20px_rgba(255,195,0,0.15)]"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#111111] border border-[#FFC300]/30 text-[#FFC300] text-xs font-semibold uppercase tracking-wider shadow-[0_0_20px_rgba(255,195,0,0.15)]"
           >
             <Sparkles className="w-4 h-4" /> Selected Portfolio
           </motion.div>
@@ -117,9 +117,9 @@ export default function Projects() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-white/70 text-base md:text-lg leading-relaxed"
+            className="text-gray-400 text-base md:text-lg leading-relaxed"
           >
-            Explore our high-converting e-commerce builds, custom web applications, and brand scaling projects crafted with modern frameworks and strategy.
+            Explore our high-converting e-commerce builds, custom web applications, and client scaling projects crafted with modern strategy.
           </motion.p>
         </div>
 
@@ -137,7 +137,7 @@ export default function Projects() {
               className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
                 activeCategory === cat
                   ? "bg-gradient-to-r from-[#FFC300] to-[#FFB800] text-black shadow-[0_0_25px_rgba(255,195,0,0.35)] scale-105"
-                  : "bg-[#0b1026] text-white/70 border border-[#1E3A8A]/30 hover:border-[#FFC300]/50 hover:text-white"
+                  : "bg-[#111111] text-gray-400 border border-neutral-800 hover:border-[#FFC300]/50 hover:text-white"
               }`}
             >
               {cat}
@@ -145,13 +145,13 @@ export default function Projects() {
           ))}
         </motion.div>
 
-        {/* FEATURED CASE STUDY */}
+        {/* FEATURED CASE STUDY - CANADA HOME CLEANING CLIENT */}
         {activeCategory === "All" && featuredProject && (
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-16 group relative rounded-3xl bg-gradient-to-br from-[#0b102b] via-[#050816] to-[#0d1436] border border-[#FFC300]/30 p-6 md:p-10 overflow-hidden shadow-[0_0_50px_rgba(0,80,255,0.15)] hover:border-[#FFC300] transition-all duration-500"
+            className="mt-16 group relative rounded-3xl bg-[#0a0a0a] border border-[#FFC300]/30 p-6 md:p-10 overflow-hidden shadow-[0_0_40px_rgba(0,0,0,0.8)] hover:border-[#FFC300] transition-all duration-500"
           >
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
               <div className="lg:col-span-7 space-y-6">
@@ -161,7 +161,7 @@ export default function Projects() {
                 <h2 className="text-3xl md:text-4xl font-extrabold text-white group-hover:text-[#FFC300] transition-colors">
                   {featuredProject.title}
                 </h2>
-                <p className="text-white/70 text-base leading-relaxed">
+                <p className="text-gray-300 text-base leading-relaxed">
                   {featuredProject.description}
                 </p>
 
@@ -169,14 +169,14 @@ export default function Projects() {
                   {featuredProject.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-3 py-1 text-xs rounded-md bg-[#131b3e] text-white/80 border border-[#1E3A8A]/40"
+                      className="px-3 py-1 text-xs rounded-md bg-[#161616] text-gray-300 border border-neutral-800"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
 
-                <div className="pt-4 flex items-center justify-between border-t border-[#1E3A8A]/30">
+                <div className="pt-4 flex items-center justify-between border-t border-neutral-800">
                   <div className="flex items-center gap-2 text-[#FFC300] font-bold text-sm">
                     <TrendingUp className="w-5 h-5" />
                     <span>{featuredProject.stats}</span>
@@ -192,11 +192,11 @@ export default function Projects() {
                 </div>
               </div>
 
-              <div className="lg:col-span-5 relative overflow-hidden rounded-2xl bg-[#131b3e] border border-[#1E3A8A]/30 group-hover:scale-[1.02] transition-transform duration-500">
+              <div className="lg:col-span-5 relative overflow-hidden rounded-2xl bg-[#111111] border border-neutral-800 group-hover:scale-[1.02] transition-transform duration-500">
                 <img
                   src={featuredProject.image}
                   alt={featuredProject.title}
-                  className="w-full h-80 object-cover object-top"
+                  className="w-full h-80 object-cover object-center"
                 />
               </div>
             </div>
@@ -211,16 +211,16 @@ export default function Projects() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group bg-[#0b1026] border border-[#1E3A8A]/30 rounded-3xl overflow-hidden hover:border-[#FFC300]/60 transition-all duration-300 flex flex-col justify-between hover:shadow-[0_10px_30px_rgba(0,80,255,0.2)]"
+              className="group bg-[#0a0a0a] border border-neutral-800 rounded-3xl overflow-hidden hover:border-[#FFC300]/60 transition-all duration-300 flex flex-col justify-between hover:shadow-[0_10px_30px_rgba(0,0,0,0.9)]"
             >
               <div>
-                <div className="relative h-56 overflow-hidden bg-[#131b3e]">
+                <div className="relative h-56 overflow-hidden bg-[#111111]">
                   <img
                     src={project.image}
                     alt={project.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
-                  <div className="absolute top-4 right-4 bg-[#050816]/80 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold text-[#FFC300] border border-[#FFC300]/30">
+                  <div className="absolute top-4 right-4 bg-black/80 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold text-[#FFC300] border border-[#FFC300]/30">
                     {project.category}
                   </div>
                 </div>
@@ -229,7 +229,7 @@ export default function Projects() {
                   <h3 className="text-2xl font-bold text-white group-hover:text-[#FFC300] transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-white/70 text-sm leading-relaxed line-clamp-3">
+                  <p className="text-gray-400 text-sm leading-relaxed line-clamp-3">
                     {project.description}
                   </p>
 
@@ -237,7 +237,7 @@ export default function Projects() {
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-2.5 py-0.5 text-xs rounded bg-[#131b3e] text-white/70 border border-[#1E3A8A]/30"
+                        className="px-2.5 py-0.5 text-xs rounded bg-[#161616] text-gray-400 border border-neutral-800"
                       >
                         {tag}
                       </span>
@@ -246,7 +246,7 @@ export default function Projects() {
                 </div>
               </div>
 
-              <div className="p-6 pt-0 mt-4 border-t border-[#1E3A8A]/20 flex items-center justify-between">
+              <div className="p-6 pt-0 mt-4 border-t border-neutral-800 flex items-center justify-between">
                 <span className="text-xs font-bold text-[#FFC300] flex items-center gap-1">
                   <CheckCircle2 className="w-3.5 h-3.5" /> {project.stats}
                 </span>
@@ -268,13 +268,13 @@ export default function Projects() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="mt-28 relative rounded-3xl bg-gradient-to-r from-[#0b102b] via-[#121b44] to-[#0b102b] border border-[#FFC300]/40 p-10 md:p-16 text-center overflow-hidden shadow-[0_0_60px_rgba(255,195,0,0.15)]"
+          className="mt-28 relative rounded-3xl bg-[#0a0a0a] border border-[#FFC300]/40 p-10 md:p-16 text-center overflow-hidden shadow-[0_0_50px_rgba(255,195,0,0.1)]"
         >
           <div className="max-w-2xl mx-auto space-y-6 relative z-10">
             <h2 className="text-3xl md:text-5xl font-black text-white">
               Ready to Turn Your Vision into Reality?
             </h2>
-            <p className="text-white/70 text-base md:text-lg">
+            <p className="text-gray-400 text-base md:text-lg">
               Let’s build a stunning, high-converting e-commerce platform or custom website for your business.
             </p>
             <div className="pt-4 flex flex-wrap justify-center items-center gap-4">
